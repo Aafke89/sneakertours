@@ -1,8 +1,76 @@
-<h1>Locations</h1>
 
-<% @locations.each do |location| %>
-  <%= image_tag location.picture, width: '200px', height: '100px' %> <br>
-  <%= link_to location.name, location_path(location) %> <br>
-  <%= location.description %> <br>
-  <hr>
+<div class="wrapper-locations">
+  <div class="locations-title">
+    Where to go?
+  </div>
+  <div class="locations-buttons">
+    <div class="btn btn-loc-cat"> categorie</div>
+    <div class="btn btn-loc-cat">categorie</div>
+    <div class="btn btn-loc-cat">categorie</div>
+    <div class="btn btn-loc-cat">categorie</div>
+    <div class="btn btn-loc-cat">categorie</div>
+  </div>
+  <div class="locations-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <div class="locations-map">
+            <div id="map"></div>
+            <!-- <div class="big-map">
+
+            </div> -->
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="locations-list">
+            <% @locations.each do |location| %>
+            <%= link_to location.name, location_path(location) %> <br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Showing the map with the markers -->
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+
+  var strictBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(52.346415, 4.853680),
+        new google.maps.LatLng(52.402162, 4.978654)
+    );
+
+  var mapStyle =[
+  {
+    "stylers": [
+      { "saturation": -100 },
+      { "lightness": 80 }
+    ]
+  }
+]
+
+  $(document).on('ready', function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({
+    internal: {id: 'map'},
+    provider: {
+      zoom: 13,
+      center: new google.maps.LatLng(52.373095,4.8909129,17),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      draggable: true,
+      styles:    mapStyle
+     }
+    },
+    function(){
+      markers = handler.addMarkers(<%= raw @markers.to_json %>);
+                handler.bounds.extendWidth(markers);
+                handler.fitMapToBounds();
+
+    });
+  })
 <% end %>
+<% end %>
+

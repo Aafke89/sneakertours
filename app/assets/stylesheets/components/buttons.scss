@@ -1,0 +1,13 @@
+.btn-loc-cat {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  &:hover {
+    background-color: $yellow;
+    color: black;
+  }
+   &:active {
+    background-color: rgb(247, 119, 244);
+    color: white;
+  }
+}

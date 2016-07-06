@@ -1,0 +1,47 @@
+.wrapper-locations {
+    padding: 80px 40px;
+    background: linear-gradient(to right, $pink, $yellow);
+}
+
+.locations-title {
+  font-family: Courier;
+  font-size: 40px;
+  text-align: left;
+  margin-left: 46px;
+}
+
+.locations-content {
+  margin-top: 10px;
+}
+
+.locations-map {
+  padding: 20px 20px;
+  border: 2px solid $pink;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.big-map {
+  background-image: url("st-map.jpg");
+  background-size: cover;
+  min-height: 400px;
+}
+
+.locations-list {
+  padding: 20px 20px;
+  border: 2px solid $pink;
+  min-height: 443px;
+  text-align: center;
+  background-color: white;
+}
+
+.locations-buttons {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+#map {
+  height: 400px;
+}
+
+

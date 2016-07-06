@@ -1,0 +1,22 @@
+@import "config/variables";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Import own CSS*/
+@import "components/index";
+@import "pages/index";
+
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
