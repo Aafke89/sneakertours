@@ -1,0 +1,8 @@
+<h1>Locations</h1>
+
+<% @locations.each do |location| %>
+  <%= image_tag location.picture, width: '200px', height: '100px' %> <br>
+  <%= link_to location.name, location_path(location) %> <br>
+  <%= location.description %> <br>
+  <hr>
+<% end %>
