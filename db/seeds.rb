@@ -12,11 +12,11 @@ Location.create(
   description: "A movietheatre with all kind of movies, cool!",
   picture: "https://source.unsplash.com/random/100X51",
   link: "#",
-  address: "Overtoom 301, Amsterdam")
+  address: "Van Hallstraat 52, Amsterdam")
 
 Location.create(
   name: "COOP",
   description: "Coworking space",
   picture: "https://source.unsplash.com/random/100X52",
   link: "#",
-  address: "Overtoom 301, Amsterdam")
+  address: "Tolhuisweg 2, Amsterdam")

@@ -6,6 +6,11 @@ class LocationsController < ApplicationController
     @markers = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
       marker.lng  location.longitude
+
+      marker.infowindow render_to_string(partial: "/locations/infowindow", locals: {location: location})
+      marker.picture({url: 'assets/marker.png',
+                      width: 32,
+                      height: 32 })
     end
   end
 
