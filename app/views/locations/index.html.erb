@@ -4,11 +4,13 @@
     Where to go?
   </div>
   <div class="locations-buttons">
-    <div class="btn btn-loc-cat"> categorie</div>
-    <div class="btn btn-loc-cat">categorie</div>
-    <div class="btn btn-loc-cat">categorie</div>
-    <div class="btn btn-loc-cat">categorie</div>
-    <div class="btn btn-loc-cat">categorie</div>
+    <%= link_to "Art/Culture", locations_path(category: 'culture'), class: "btn btn-loc-cat" %>
+    <%= link_to "Bar", locations_path(category: 'bar'), class: "btn btn-loc-cat" %>
+    <%= link_to "Food", locations_path(category: 'food'), class: "btn btn-loc-cat" %>
+    <%= link_to "Party", locations_path(category: 'party'), class: "btn btn-loc-cat" %>
+    <%= link_to "Shop/Market", locations_path(category: 'shop'), class: "btn btn-loc-cat" %>
+    <%= link_to "Chill/Outdoors", locations_path(category: 'chill'), class: "btn btn-loc-cat" %>
+    <%= link_to "All", locations_path(category: 'all'), class: "btn btn-loc-cat" %>
   </div>
   <div class="locations-content">
     <div class="container">
@@ -47,7 +49,7 @@
   {
     "stylers": [
       { "saturation": -100 },
-      { "lightness": 80 }
+      { "lightness": 20 }
     ]
   }
 ]
