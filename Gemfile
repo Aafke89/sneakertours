@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'simple_form'
+gem 'simple-form-datepicker', '~> 0.1.3'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'

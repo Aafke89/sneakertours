@@ -1,0 +1,15 @@
+<div class="wrapper-form">
+  <div class="form">
+    <h1>Add an Event</h1>
+    <%= simple_form_for [@event] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :link %>
+    <%= f.input :image %>
+    <%= f.input :start_date, as: :datetime %>
+    <%= f.input :end_date, as: :datetime %>
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
+    <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

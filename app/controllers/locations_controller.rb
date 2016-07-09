@@ -19,6 +19,19 @@ class LocationsController < ApplicationController
 
   end
 
+  # def new
+  #   @location = Location.new
+  # end
+
+  # def create
+  #   @location = Location.new(location_params)
+  #   if @location.save
+  #     redirect_to location_path(@location)
+  #   else
+  #     render: new
+  #   end
+  # end
+
   private
 
   def find_location
@@ -33,5 +46,9 @@ class LocationsController < ApplicationController
       @locations = Location.all
     end
   end
+
+  # def location_params
+  #   params.require(:location).permit(:name, :description, :category, :picture, :link, :address)
+  # end
 
 end

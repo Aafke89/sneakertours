@@ -1,0 +1,41 @@
+.wrapper-events {
+    padding: 80px 40px;
+    background: linear-gradient(to right, $pink, $yellow);
+}
+
+.events-title {
+  font-family: Courier;
+  font-size: 40px;
+  text-align: left;
+  margin-left: 46px;
+}
+
+.events-content {
+  margin-top: 10px;
+}
+
+.events-card {
+  background-color: white;
+  border: 3px solid black;
+  height: 400px;
+  position: relative;
+  margin: 10px 0px;
+}
+
+.event-card-image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  img {
+    height: 200px;
+    width: 100%;
+  }
+}
+
+.event-card-text {
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  height: 200px;
+  width: 100%;
+}
