@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   before_action :find_event, only: [:show]
+  before_action :filter_events, only: [:index]
 
   def index
-    @events = Event.all
+    @events = @filtered_events.paginate(page: params[:page], per_page: 6)
   end
 
   def show
@@ -34,6 +35,9 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :location_id, :description, :link, :image, :start_date, :end_date)
   end
 
+  def filter_events
+    @filtered_events = Event.where("end_date >= ?", Time.zone.now.beginning_of_day )
+  end
 
 
 end
