@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-8">
           <div class="locations-map">
-            <div id="map"></div>
+            <div id="locations-map"></div>
             <!-- <div class="big-map">
 
             </div> -->
@@ -45,10 +45,17 @@
         new google.maps.LatLng(52.402162, 4.978654)
     );
 
+  var imageBounds = {
+      north: 52.402162,
+      south: 52.346415,
+      east: 4.978654,
+      west: 4.853680
+    };
+
   $(document).on('ready', function(){
     handler = Gmaps.build('Google');
     handler.buildMap({
-    internal: {id: 'map'},
+    internal: {id: 'locations-map'},
     provider: {
       zoom: 13,
       center: new google.maps.LatLng(52.373095,4.8909129,17),
@@ -59,10 +66,18 @@
     },
     function(){
       markers = handler.addMarkers(<%= raw @markers.to_json %>);
-                handler.bounds.extendWidth(markers);
+                <!-- handler.bounds.extendWidth(markers); -->
                 handler.fitMapToBounds();
+      stOverlay = new google.maps.GroundOverlay(
+      '/assets/st-map.jpg',
+      imageBounds);
+      stOverlay.setMap(handler.map);
 
-    });
+    }
+    );
+    <!-- This is not yet working because i can't find the instance of the map -->
+
+
   })
 <% end %>
 <% end %>
