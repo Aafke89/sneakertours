@@ -25,6 +25,7 @@
   word-wrap: break-word;
   text-align: justify;
   padding: 10px 30px;
+  min-height: 200px;
 }
 
 .event-date {
@@ -51,6 +52,12 @@
   text-transform: uppercase;
 }
 
+.event-link {
+  text-align: right;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
 .event-details {
   position: absolute;
   bottom: 0;
@@ -72,7 +79,7 @@
 
 }
 
-.event-map {
+#event-map {
   width: 50%;
   height: 100%;
   background-color: $pink;

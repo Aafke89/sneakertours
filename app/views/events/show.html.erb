@@ -23,9 +23,12 @@
      <div class="event-description">
       <%= @event.description %>
     </div>
+    <div class="event-link">
+      <%= link_to "check their website", @event.link %>
+    </div>
 
     <div class="event-details">
-      <div class="event-map">
+      <div id="event-map">
 
       </div>
       <div class="event-location">
@@ -40,9 +43,22 @@
   </div>
 </div>
 
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var myLatLng = {lat: <%= @event.location.latitude %>, lng: <%= @event.location.longitude %>};
 
+      var map = new google.maps.Map(document.getElementById('event-map'), {
+        zoom: 15,
+        center: myLatLng,
+        styles: window.mapStyle
+      });
 
-
-
-<%= image_tag @event.image  %>
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map
+    });
+    })
+  </script>
+<% end %>
 
