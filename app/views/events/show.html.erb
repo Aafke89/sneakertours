@@ -1,6 +1,48 @@
+<div class="wrapper-event" style="background-image: url(<%= @event.image %>)">
+  <div class="event-content">
+  <!-- Date of the event (one day or more) -->
+    <div class="event-date">
+    <% a = @event.end_date - @event.start_date %>
+      <% if (a / 60 / 60) >= 24 %>
+      <%= @event.start_date.strftime("%e %b") %> -  <%= @event.end_date.strftime("%e %b") %> <br>
+      <% else %>
+      <%= @event.start_date.strftime("%e %b") %> <br>
+      <% end %>
+    </div>
 
-  <%= @event.title %>
-  <%= @event.description %>
-  <%= @event.location %>
-  <%= image_tag @event.image  %>
+      <% unless @event.start_date.strftime("%H:%M") ==   @event.end_date.strftime("%H:%M")%>
+      <div class="event-time">
+         <%= @event.start_date.strftime("%H:%M") %> -  <%= @event.end_date.strftime("%H:%M") %>
+         </div>
+      <% end %>
+
+
+    <div class="event-title">
+      <%= @event.title %>
+    </div>
+     <div class="event-description">
+      <%= @event.description %>
+    </div>
+
+    <div class="event-details">
+      <div class="event-map">
+
+      </div>
+      <div class="event-location">
+        Waar dan? <br><br>
+        <%= @event.location.name %> <br> <br>
+        <%= @event.location.description %> <br>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+<%= image_tag @event.image  %>
 

@@ -1,0 +1,99 @@
+.wrapper-event {
+  // background: linear-gradient(to right, rgba(1,1,1,0), $yellow);
+  background-size: cover;
+  padding: 80px 40px;
+   min-height: 100vh;
+}
+
+.event-content {
+  margin: auto;
+  max-width: 450px;
+  background-color: white;
+  position: relative;
+  padding-bottom: 200px;
+}
+
+.event-title {
+  font-family: $headfont;
+  font-size: 40px;
+  text-align: center;
+}
+
+.event-description {
+  font-family: $regfont;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: justify;
+  padding: 10px 30px;
+}
+
+.event-date {
+  width: 100%;
+  background-color: $yellow;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.event-time {
+  width: 100%;
+  background-color: $pink;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.event-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
+
+.event-location {
+  width: 50%;
+  height: 100%;
+  background-color: $yellow;
+  padding: 10px;
+  font-family: $regfont;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: justify;
+
+}
+
+.event-map {
+  width: 50%;
+  height: 100%;
+  background-color: $pink;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

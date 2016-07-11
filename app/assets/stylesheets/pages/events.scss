@@ -1,6 +1,7 @@
 .wrapper-events {
     padding: 80px 40px;
     background: linear-gradient(to right, white, $yellow);
+    min-height: 100vh;
 }
 
 .events-title {
@@ -80,8 +81,6 @@
   width: 200px;
   z-index:2;
 }
-
-
 
 @media screen and (max-width: 480px) {
   .wrapper-events {
