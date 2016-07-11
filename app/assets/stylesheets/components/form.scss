@@ -1,0 +1,80 @@
+.wrapper-form {
+    padding: 80px 40px;
+    background: linear-gradient(to right, white, $pink);
+    min-height: 100vh;
+}
+
+.form {
+  margin: auto;
+  max-width: 450px;
+  background-color: rgba(255, 238, 0, 0.21);
+  padding: 20px;
+}
+
+.form-title {
+  text-align: center;
+  font-family: $headfont;
+  font-size: 40px;
+}
+
+select {
+  padding: 5px;
+  width: 400px;
+  border: 0;
+  box-shadow: 0px;
+  border-radius: 0px;
+  margin: 5px 0px;
+  font-family: $headfont;
+}
+
+.date_box {
+  color: rgba(0,0,0,1);
+  display: flex;
+  font-family: $headfont;
+  select {
+  padding: 5px;
+  width: 180px;
+  border: 0;
+  box-shadow: 0px;
+  border-radius: 0px;
+  margin-right: 10px;
+  }
+  #event_start_date_4i {
+      width: 70px;
+      margin-left: -17px;
+    }
+  #event_start_date_5i {
+      width: 70px;
+    }
+   #event_end_date_4i {
+      width: 70px;
+      margin-left: -17px;
+    }
+  #event_end_date_5i {
+      width: 70px;
+    }
+}
+
+.string {
+  border: 0;
+  box-shadow: 0px;
+  padding: 5px;
+  width: 400px;
+  font-family: $headfont;
+}
+
+.text {
+  border: 0;
+  box-shadow: 0px;
+  padding: 5px;
+  width: 400px;
+  font-family: $headfont;
+}
+
+
+
+label {
+  color: red;
+}
+
+
