@@ -71,19 +71,30 @@
   width: 50%;
   height: 100%;
   background-color: $yellow;
-  padding: 10px;
   font-family: $regfont;
   overflow-wrap: break-word;
   word-wrap: break-word;
   text-align: justify;
+}
 
+.event-waardan {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 5px;
+  font-family: arial;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.event-waardan-info {
+  padding: 10px;
 }
 
 #event-map {
   width: 50%;
   height: 100%;
   background-color: $pink;
-
 }
 
 

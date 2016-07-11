@@ -1,8 +1,8 @@
 <div class="wrapper-event" style="background-image: url(<%= @event.image %>)">
   <div class="event-content">
-  <!-- Date of the event (one day or more) -->
+    <!-- Date of the event (one day or more) -->
     <div class="event-date">
-    <% a = @event.end_date - @event.start_date %>
+      <% a = @event.end_date - @event.start_date %>
       <% if (a / 60 / 60) >= 24 %>
       <%= @event.start_date.strftime("%e %b") %> -  <%= @event.end_date.strftime("%e %b") %> <br>
       <% else %>
@@ -10,55 +10,73 @@
       <% end %>
     </div>
 
-      <% unless @event.start_date.strftime("%H:%M") ==   @event.end_date.strftime("%H:%M")%>
-      <div class="event-time">
-         <%= @event.start_date.strftime("%H:%M") %> -  <%= @event.end_date.strftime("%H:%M") %>
-         </div>
-      <% end %>
+    <% unless @event.start_date.strftime("%H:%M") ==   @event.end_date.strftime("%H:%M") || (a / 60 / 60) >= 24%>
+    <div class="event-time">
+     <%= @event.start_date.strftime("%H:%M") %> -  <%= @event.end_date.strftime("%H:%M") %>
+   </div>
+   <% end %>
 
 
-    <div class="event-title">
-      <%= @event.title %>
+   <div class="event-title">
+    <%= @event.title %>
+  </div>
+  <div class="event-description">
+    <%= @event.description %>
+  </div>
+  <div class="event-link">
+    <%= link_to "check their website", @event.link %>
+  </div>
+
+  <div class="event-details">
+    <div id="event-map">
+      <!-- This is the part were the map comes -->
     </div>
-     <div class="event-description">
-      <%= @event.description %>
-    </div>
-    <div class="event-link">
-      <%= link_to "check their website", @event.link %>
-    </div>
-
-    <div class="event-details">
-      <div id="event-map">
-
-      </div>
-      <div class="event-location">
-        Waar dan? <br><br>
+    <div class="event-location">
+      <div class="event-waardan">Where is this?</div>
+      <div class="event-waardan-info">
         <%= @event.location.name %> <br> <br>
         <%= @event.location.description %> <br>
       </div>
+
     </div>
-
-
-
   </div>
+
+
+
+</div>
 </div>
 
 <% content_for(:after_js) do %>
-  <script type="text/javascript">
-    $(document).on('ready', function() {
-      var myLatLng = {lat: <%= @event.location.latitude %>, lng: <%= @event.location.longitude %>};
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    var myLatLng = {lat: <%= @event.location.latitude %>, lng: <%= @event.location.longitude %>};
 
-      var map = new google.maps.Map(document.getElementById('event-map'), {
-        zoom: 15,
-        center: myLatLng,
-        styles: window.mapStyle
-      });
+    var imageBounds = {
+      north: 52.402162,
+      south: 52.346415,
+      east: 4.978654,
+      west: 4.853680
+    };
 
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map
+    var map = new google.maps.Map(document.getElementById('event-map'), {
+      zoom: 15,
+      center: myLatLng,
+      styles: window.mapStyle
     });
-    })
-  </script>
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      animation: google.maps.Animation.BOUNCE,
+      icon: '/assets/marker.png'
+    });
+
+    stOverlay = new google.maps.GroundOverlay(
+      '/assets/st-map.jpg',
+      imageBounds);
+    stOverlay.setMap(map);
+
+  })
+</script>
 <% end %>
 
