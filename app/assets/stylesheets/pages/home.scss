@@ -5,6 +5,8 @@
   position: relative;
 }
 
+
+
 .home-logo {
   position: absolute;
   top: 20px;
@@ -77,6 +79,23 @@
 
 // toggle locations
 
-#locations-slider {
+#home-locations-image {
   display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+.home-bike {
+  z-index: 1000;
+  width: 300px;
+  height: 200px;
+}
+
+.home-couch {
+  position: absolute;
+  bottom: 122px;
+  right: 0px;
+  z-index: 500;
 }

@@ -30,6 +30,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'simple_form'
 gem 'will_paginate'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'

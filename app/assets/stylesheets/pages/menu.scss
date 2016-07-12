@@ -1,0 +1,32 @@
+.menu-crosses {
+  position: absolute;
+  font-family: arial;
+  font-size: 15px;
+  top: 5px;
+  left: 10px;
+  z-index: 999;
+  color: black;
+  a {
+    color: black;
+  }
+}
+
+.menu-1-text {
+  font-family: $headfont;
+  font-size: 15px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+
+.menu-2-text {
+  font-family: $headfont;
+  font-size: 15px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+.menu-3-text {
+  font-family: $headfont;
+  font-size: 15px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
