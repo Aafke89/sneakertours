@@ -36,7 +36,7 @@
             <% else %>
                <div class="event-card-image-up">
             <% end %>
-              <%= image_tag event.image  %>
+              <%= image_tag event.always_image %>
             </div>
           </div>
         </div>
@@ -45,11 +45,13 @@
     </div>
 
   </div>
-      <%= will_paginate @events %>
-
-
+  <div class="events-pagination">
+         <%= will_paginate @events,
+        :previous_label => "<",
+        :next_label     => ">"
+    %>
+  </div>
 </div>
-
 </div>
 </div>
 

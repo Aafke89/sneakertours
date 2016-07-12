@@ -1,0 +1,31 @@
+.events-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a, em {
+    font-size: 30px;
+    padding: 5px 15px;
+    margin: 0px 10px;
+    color: white;
+  }
+  .next_page, .previous_page {
+    font-size: 40px;
+    padding: 5px;
+    border: 0;
+    background-color: rgba(1,1,1,0);
+  }
+  a {
+    color: black;
+  }
+  .disabled {
+    color: white;
+  }
+  // .next_page {
+  //   font-size: 40px;
+  //   padding: 5px;
+  // }
+  //  {
+  //   font-size: 40px;
+  //   padding: 5px;
+  // }
+}

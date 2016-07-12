@@ -1,7 +1,12 @@
 class Event < ActiveRecord::Base
 
+
+  # relations
+
   belongs_to :location
 
+
+  # validations
   validates :title, presence: true, length: {minimum: 3, maximum: 30}
   validates :description, presence: true, length: {minimum: 50}
   validates :start_date, presence: true
@@ -12,7 +17,7 @@ class Event < ActiveRecord::Base
   validate :validate_start_date
   validate :validate_end_date
 
-
+  ## custom validations
   def validate_start_date
     if start_date < Time.now
         errors.add(:start_date, "Event should be in the future")
@@ -24,6 +29,22 @@ class Event < ActiveRecord::Base
         errors.add(:end_date, "The end of the event has to be after the start of the event")
     end
   end
+
+  # instance methods
+
+  def always_image
+    # Add some random pictures as default picture
+    default_images = ["http://www.sneakertours.nl/illustrations/landingspage22.jpg",
+      "http://www.sneakertours.nl/illustrations/provowittefiets.jpg",
+      "http://www.sneakertours.nl/illustrations/st-map-blauw.jpg"]
+    if self.image != nil && self.image != ""
+      self.image
+    else
+      default_images.sample
+    end
+  end
+
+
 
 
 end
