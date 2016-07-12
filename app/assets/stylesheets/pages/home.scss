@@ -1,0 +1,82 @@
+.home-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: relative;
+}
+
+.home-logo {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 999;
+}
+
+.home-tagline {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  z-index: 999;
+  font-size: 22px;
+  font-family: $headfont;
+  font-weight: bolder;
+  .home-change-word {
+    color: $pink;
+  }
+}
+
+.home-item {
+  color: black;
+  font-family: $regfont;
+  position: absolute;
+  padding: 0px 15px;
+  font-size: 50px;
+}
+
+.home-right-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  border-bottom: 300px solid $yellow;
+  border-left: 800px solid transparent;
+  .home-item {
+   bottom: -146px;
+  right: 250px;
+  transform: rotate(340deg);
+  color: $yellow;
+  }
+}
+
+.home-left-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  border-bottom: 160px solid $pink;
+  border-right: 880px solid transparent;
+  .home-item {
+  bottom: -82px;
+  left: 226px;
+  transform: rotate(370deg);
+  color: $pink;
+  }
+}
+
+.home-right-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  border-top: 200px solid $pink;
+  border-left: 1500px solid transparent;
+}
+
+// toggle locations
+
+#locations-slider {
+  display: none;
+}
