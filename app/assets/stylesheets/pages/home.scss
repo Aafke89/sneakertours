@@ -5,8 +5,6 @@
   position: relative;
 }
 
-
-
 .home-logo {
   position: absolute;
   top: 20px;
@@ -17,19 +15,24 @@
 .home-tagline {
   position: absolute;
   top: 200px;
-  left: 50px;
+  left: 0px;
+  width: 100%;
   z-index: 999;
-  font-size: 22px;
-  font-family: $headfont;
+  font-size: 50px;
+  font-family: $abelfont;
   font-weight: bolder;
+  .home-tagline-text{
+  text-align: center;
+  }
   .home-change-word {
     color: $pink;
+    font-family: $headfont;
   }
 }
 
 .home-item {
   color: black;
-  font-family: $regfont;
+  font-family: $abelfont;
   position: absolute;
   padding: 0px 15px;
   font-size: 50px;

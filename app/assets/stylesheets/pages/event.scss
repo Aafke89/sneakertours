@@ -20,42 +20,49 @@
 }
 
 .event-description {
-  font-family: $regfont;
+  font-family: $abelfont;
   overflow-wrap: break-word;
   word-wrap: break-word;
   text-align: justify;
   padding: 10px 30px;
   min-height: 200px;
+  font-size: 16px;
 }
 
 .event-date {
   width: 100%;
   background-color: $yellow;
   color: white;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   text-transform: uppercase;
+  font-family: $abelfont;
 }
 
 .event-time {
   width: 100%;
   background-color: $pink;
   color: white;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   text-transform: uppercase;
+  font-family: $abelfont;
 }
 
 .event-link {
   text-align: right;
   margin-right: 20px;
   margin-bottom: 10px;
+  a {
+    color: $pink;
+    font-weight: bolder;
+  }
 }
 
 .event-details {
@@ -71,7 +78,8 @@
   width: 50%;
   height: 100%;
   background-color: rgba(227, 225, 29, 0.40); //zeer lichte variant $yellow
-  font-family: $regfont;
+  font-family: $abelfont;
+  font-size: 16px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   text-align: justify;
@@ -82,7 +90,7 @@
   color: white;
   width: 100%;
   padding: 5px;
-  font-family: arial;
+  font-family: $abelfont;
   text-transform: uppercase;
   text-align: center;
 }

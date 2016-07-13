@@ -1,9 +1,9 @@
 .menu-crosses {
   position: absolute;
-  font-family: arial;
-  font-size: 15px;
-  top: 5px;
-  left: 10px;
+  font-family: $abelfont;
+  font-size: 30px;
+  top: 250px;
+  left: 20px;
   z-index: 999;
   color: black;
   a {
@@ -13,20 +13,33 @@
 
 .menu-1-text {
   font-family: $headfont;
-  font-size: 15px;
+  font-size: 25px;
   padding: 20px;
   padding-bottom: 5px;
+  background-color: white;
+  margin-left: 5px;
 }
 
 .menu-2-text {
   font-family: $headfont;
-  font-size: 15px;
+  font-size: 25px;
   padding: 20px;
   padding-bottom: 5px;
+  background-color: white;
+    margin-left: 5px;
 }
 .menu-3-text {
   font-family: $headfont;
-  font-size: 15px;
+  font-size: 25px;
   padding: 20px;
   padding-bottom: 5px;
+  background-color: white;
+    margin-left: 5px;
+}
+
+.menu-home {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
 }

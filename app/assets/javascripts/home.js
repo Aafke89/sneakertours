@@ -14,7 +14,7 @@ setInterval(function(){
   $(".home-change-word").fadeOut(function(){
     $(this).html(words[i]).fadeIn();
   });
-}, 10000);
+}, 2000);
 
 
 // move the word "locations"
