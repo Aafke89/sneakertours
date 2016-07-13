@@ -84,15 +84,15 @@
 
 #home-locations-image {
   display: none;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
 }
 
 
-.home-bike {
+.home-bike-1, .home-bike-2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   z-index: 1000;
-  width: 300px;
+  width: 600px;
   height: 200px;
 }
 
