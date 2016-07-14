@@ -26,18 +26,39 @@
 <%#= javascript_tag do %>
 <script type="text/javascript">
   $(document).on('ready', function(){
+
+
     var infowindow = null;
 
     var myLatLng = {lat: 52.373095, lng: 4.9099929 }
 
     var map = new google.maps.Map(document.getElementById('locations-full-map'), {
       zoom: 14,
+      minZoom: 14,
       center: myLatLng,
-      styles: window.mapStyle
+      draggable: true,
+      scrollwheel: false,
+      mapTypeControl: false,
+      styles: window.mapStyle,
+    });
+
+    // restrict bounds
+    map.addListener('zoom_changed', function(map){
+        lockBounds(this)
+    });
+
+    map.addListener('dragend', function(map){
+        lockBounds(this)
+    });
+
+    map.addListener('idle', function(map){
+        lockBounds(this)
     });
 
 
 
+
+    // create markers for every location
     <% @locations.each do |loc| %>
     infowindow = new google.maps.InfoWindow({
       content: ""
@@ -55,8 +76,6 @@
           infowindow.open(map, this);
         });
     <% end %>
-
-
 
     stOverlay = new google.maps.GroundOverlay(
       '/assets/st-map.jpg',
