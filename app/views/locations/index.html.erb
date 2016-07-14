@@ -68,7 +68,7 @@
       position: {lat: <%= loc.latitude %>, lng: <%= loc.longitude %>},
       map: map,
       animation: google.maps.Animation.DROP,
-      icon: '/assets/markerblauw.png'
+      icon: "http://res.cloudinary.com/aafke/image/upload/v1468500999/markerblauw_rsfl86.png"
     });
     marker.addListener('click', function() {
           infowindow.setContent( '<div class="infowindow"> <div class="infowindow-title"> <%= loc.name %> </div><%= truncate(loc.description, length: 120)  %> <br> <%= link_to "link", location_path(loc)  %></div>'

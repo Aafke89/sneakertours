@@ -1,2 +1,3 @@
 development:
   GOOGLE_API_KEY: "AIzaSyB01fu7jjQeTWnmeP_5cacIWXV_U5XHg4U"
+  CLOUDINARY_URL: "cloudinary://845967915794319:K7kJkXGnETBq5aSzxBmBXsMWnSA@aafke"
