@@ -1,0 +1,105 @@
+.wrapper-location {
+  // background: linear-gradient(to right, rgba(1,1,1,0), $yellow);
+  background-size: cover;
+  padding: 80px 40px;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.location-content {
+  margin: auto;
+  max-width: 600px;
+  background-color: white;
+  min-height: 400px;
+}
+
+.location-up {
+  display: flex;
+}
+
+.location-info {
+  width: 50%;
+  height: 300px;
+  padding: 10px;
+  position: relative;
+  .location-title {
+    text-align: center;
+    font-family: $headfont;
+    font-size: 40px;
+  }
+  .location-description {
+    font-family: $abelfont;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+  .location-link {
+    font-family: $abelfont;
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    a {
+      color: $pink;
+      font-weight: bolder;
+    }
+  }
+}
+
+#location-map {
+  width: 50%;
+  background-color: yellow;
+  height: 300px;
+}
+
+.location-down {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgba(247, 119, 244, 0.14);
+  .location-event-card {
+    background-color: white;
+    height: 200px;
+    width: 150px;
+    position: relative;
+    .location-card-image {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        img {
+        width: 150px;
+        height: 100px;
+        }
+     }
+     .location-card-info {
+      height: 100px;
+      background-color: $pink;
+     }
+    .location-event-card-date {
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        background-color: black;
+        color: white;
+        font-family: $abelfont;
+        font-size: 22px;
+       }
+    .location-event-card-title {
+        text-align: center;
+        font-family: $abelfont;
+        color: black;
+        font-size: 22px;
+        background-color: $pink;
+      }
+      .location-event-card-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 200px;
+        width: 150px;
+        z-index: 999;
+      }
+    }
+}
+

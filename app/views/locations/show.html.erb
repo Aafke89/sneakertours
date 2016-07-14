@@ -1,3 +1,93 @@
- <h1> <%= @location.name %> <br></h1>
-<%= image_tag @location.picture, width: '200px', height: '100px' %> <br>
-<%= @location.description %> <br>
+<div class="wrapper-location" style="background-image: url(<%= @location.picture %>)">
+  <div class="location-content">
+    <div class="location-up">
+      <div id="location-map">
+
+      </div>
+      <div class="location-info">
+        <div class="location-title"> <%= @location.name %></div>
+        <div class="location-description">
+          <%= @location.description %>
+        </div>
+        <div class="location-link">
+          <%= link_to "visit their website", @location.link  %>
+        </div>
+      </div>
+    </div>
+    <div class="location-down">
+      <% @location.events.take(3).each do |event| %>
+      <div class="location-event-card">
+      <div class="location-card-info">
+        <!-- show date -->
+        <div class="location-event-card-date">
+          <% a = event.end_date - event.start_date %>
+          <% if (a / 60 / 60) >= 24 %>
+          <%= event.start_date.strftime("%e %b") %> -  <%= event.end_date.strftime("%e %b") %> <br>
+          <% else %>
+          <%= event.start_date.strftime("%e %b") %> <br>
+          <% end %>
+        </div>
+        <div class="location-event-card-title">
+          <%= event.title %>
+        </div>
+        </div>
+        <div class="location-card-image">
+        <%= image_tag event.image %>
+      </div>
+        <%= link_to "", event_path(event), class: "location-event-card-link"   %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+<% content_for(:after_js) do %>
+<%#= javascript_tag do %>
+<script type="text/javascript">
+  $(document).on('ready', function(){
+
+    var myLatLng = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %> }
+
+    var map = new google.maps.Map(document.getElementById('location-map'), {
+      zoom: 12,
+      minZoom: 12,
+      center: myLatLng,
+      draggable: true,
+      scrollwheel: false,
+      mapTypeControl: false,
+      styles: window.mapStyle,
+    });
+
+    // restrict bounds
+    map.addListener('zoom_changed', function(map){
+      lockBounds(this)
+    });
+
+    map.addListener('dragend', function(map){
+      lockBounds(this)
+    });
+
+    map.addListener('idle', function(map){
+      lockBounds(this)
+    });
+
+    // create markers for every location
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      icon: "http://res.cloudinary.com/aafke/image/upload/v1468500999/markerblauw_rsfl86.png"
+    });
+
+    stOverlay = new google.maps.GroundOverlay(
+      "http://res.cloudinary.com/aafke/image/upload/v1468501647/st-map-kleiner_jbouwu.jpg",
+      imageBounds);
+    stOverlay.setMap(map);
+
+  })
+</script>
+<%# end %>
+<% end %>
+
