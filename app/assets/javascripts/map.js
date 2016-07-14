@@ -2,7 +2,7 @@ var mapStyle =[
   {
     "stylers": [
       { "saturation": -100 },
-      { "lightness": 20 }
+      { "lightness": 100 }
     ]
   }
 ]
@@ -19,15 +19,15 @@ var strictBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(52.402162, 4.978654)
     );
 
- var eventsObject = {
-        dragend: function(map) {
-          lockBounds(map)
-          console.log(map)
-        },
-        zoom_changed: function(map) {
-          lockBounds(map)
-        }
-    }
+ // var eventsObject = {
+ //        dragend: function(map) {
+ //          lockBounds(map)
+ //          console.log(map)
+ //        },
+ //        zoom_changed: function(map) {
+ //          lockBounds(map)
+ //        }
+ //    }
 
 
     function lockBounds(map)
