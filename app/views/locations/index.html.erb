@@ -26,6 +26,7 @@
 <%#= javascript_tag do %>
 <script type="text/javascript">
   $(document).on('ready', function(){
+    var infowindow = null;
 
     var myLatLng = {lat: 52.373095, lng: 4.9099929 }
 
@@ -35,14 +36,27 @@
       styles: window.mapStyle
     });
 
+
+
     <% @locations.each do |loc| %>
+    infowindow = new google.maps.InfoWindow({
+      content: ""
+    });
+
     var marker = new google.maps.Marker({
       position: {lat: <%= loc.latitude %>, lng: <%= loc.longitude %>},
       map: map,
-      animation: google.maps.Animation.BOUNCE,
-      icon: '/assets/marker.png'
+      animation: google.maps.Animation.DROP,
+      icon: '/assets/markerblauw.png'
     });
+    marker.addListener('click', function() {
+          infowindow.setContent( '<div class="infowindow"> <div class="infowindow-title"> <%= loc.name %> </div><%= truncate(loc.description, length: 120)  %> <br> <%= link_to "link", location_path(loc)  %></div>'
+                  );
+          infowindow.open(map, this);
+        });
     <% end %>
+
+
 
     stOverlay = new google.maps.GroundOverlay(
       '/assets/st-map.jpg',
