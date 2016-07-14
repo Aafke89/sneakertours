@@ -1,36 +1,24 @@
 
 <div class="wrapper-locations">
-  <div class="locations-title">
-    Where to go?
+  <div id="locations-full-map"></div>
+    <div class="locations-buttons">
+    <%= link_to "Art/Culture", locations_path(category: 'culture'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Bar", locations_path(category: 'bar'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Food", locations_path(category: 'food'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Party", locations_path(category: 'party'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Shop/Market", locations_path(category: 'shop'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Chill/Outdoors", locations_path(category: 'chill'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "All", locations_path(category: 'all'), class: "btn btn-loc-cat btn-space" %>
   </div>
-  <div class="locations-buttons">
-    <%= link_to "Art/Culture", locations_path(category: 'culture'), class: "btn btn-loc-cat" %>
-    <%= link_to "Bar", locations_path(category: 'bar'), class: "btn btn-loc-cat" %>
-    <%= link_to "Food", locations_path(category: 'food'), class: "btn btn-loc-cat" %>
-    <%= link_to "Party", locations_path(category: 'party'), class: "btn btn-loc-cat" %>
-    <%= link_to "Shop/Market", locations_path(category: 'shop'), class: "btn btn-loc-cat" %>
-    <%= link_to "Chill/Outdoors", locations_path(category: 'chill'), class: "btn btn-loc-cat" %>
-    <%= link_to "All", locations_path(category: 'all'), class: "btn btn-loc-cat" %>
+  <div class="locations-list">
+    <% @locations.each do |location| %>
+    <%= link_to location.name, location_path(location) %> <br>
+    <% end %>
   </div>
-  <div class="locations-content">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-md-8">
-          <div class="locations-map">
-            <div id="locations-map"></div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <div class="locations-list">
-            <% @locations.each do |location| %>
-            <%= link_to location.name, location_path(location) %> <br>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
 </div>
+
 
 <!-- Showing the map with the markers -->
 
@@ -41,8 +29,8 @@
 
     var myLatLng = {lat: 52.373095, lng: 4.9099929 }
 
-    var map = new google.maps.Map(document.getElementById('locations-map'), {
-      zoom: 13,
+    var map = new google.maps.Map(document.getElementById('locations-full-map'), {
+      zoom: 14,
       center: myLatLng,
       styles: window.mapStyle
     });
