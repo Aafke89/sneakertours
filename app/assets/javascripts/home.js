@@ -13,7 +13,9 @@
 //   $("#home-locations-image").animate("margin-left", "300px")
 // }
 
+
 function partyParty() {
+  // Shows the textballoon with party now and then
   var animationparty1 = $(".couch-party").removeClass("hidden");
   var animationparty2 = setTimeout(function() {$(".couch-party").addClass("hidden");}, 300 )
   var animationparty3 = setTimeout(function() {$(".couch-party").removeClass("hidden");}, 400 )
@@ -28,7 +30,7 @@ function partyParty() {
 
 $(document).ready(function(){
 
-// Change word
+// Change word in tagline on homepage
 var words = [
 "BEER",
 "PARTY",

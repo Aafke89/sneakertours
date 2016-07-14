@@ -18,10 +18,7 @@
         <div class="col-xs-12 col-md-8">
           <div class="locations-map">
             <div id="locations-map"></div>
-            <!-- <div class="big-map">
-
-            </div> -->
-          </div>
+            </div>
         </div>
         <div class="col-xs-12 col-md-4">
           <div class="locations-list">
@@ -38,23 +35,40 @@
 <!-- Showing the map with the markers -->
 
 <% content_for(:after_js) do %>
-<%= javascript_tag do %>
-
-  var strictBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(52.346415, 4.853680),
-        new google.maps.LatLng(52.402162, 4.978654)
-    );
-
-  var imageBounds = {
-      north: 52.402162,
-      south: 52.346415,
-      east: 4.978654,
-      west: 4.853680
-    };
-
+<%#= javascript_tag do %>
+<script type="text/javascript">
   $(document).on('ready', function(){
-    handler = Gmaps.build('Google');
-    handler.buildMap({
+
+    var myLatLng = {lat: 52.373095, lng: 4.9099929 }
+
+    var map = new google.maps.Map(document.getElementById('locations-map'), {
+      zoom: 13,
+      center: myLatLng,
+      styles: window.mapStyle
+    });
+
+    <% @locations.each do |loc| %>
+    var marker = new google.maps.Marker({
+      position: {lat: <%= loc.latitude %>, lng: <%= loc.longitude %>},
+      map: map,
+      animation: google.maps.Animation.BOUNCE,
+      icon: '/assets/marker.png'
+    });
+    <% end %>
+
+    stOverlay = new google.maps.GroundOverlay(
+      '/assets/st-map.jpg',
+      imageBounds);
+    stOverlay.setMap(map);
+
+  })
+</script>
+<%# end %>
+<% end %>
+
+<!--
+stmap = Gmaps.build('Google');
+    stmap.buildMap({
     internal: {id: 'locations-map'},
     provider: {
       zoom: 13,
@@ -65,20 +79,14 @@
      }
     },
     function(){
-      markers = handler.addMarkers(<%= raw @markers.to_json %>);
-                <!-- handler.bounds.extendWidth(markers); -->
-                handler.fitMapToBounds();
+      markers = stmap.addMarkers(<%= raw @markers.to_json %>);
+                stmap.bounds.extendWidth(markers);
+                 stmap.fitMapToBounds();
       stOverlay = new google.maps.GroundOverlay(
       '/assets/st-map.jpg',
       imageBounds);
-      stOverlay.setMap(handler.map);
+      stOverlay.setMap(stmap.map);
 
     }
-    );
-    <!-- This is not yet working because i can't find the instance of the map -->
-
-
-  })
-<% end %>
-<% end %>
+    );  -->
 
