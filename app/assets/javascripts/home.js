@@ -37,12 +37,12 @@ var words = [
 "ART",
 "ALTERNATIVE",
 "CHEAP"
-];
+], i = 0;
 
 setInterval(function(){
-  i = Math.floor((Math.random() * 5) + 1);
+  // i = Math.floor((Math.random() * 5));
   $(".home-change-word").fadeOut(function(){
-    $(this).html(words[i]).fadeIn();
+    $(this).html(words[(i+=1)%5]).fadeIn();
   });
 }, 6000);
 
