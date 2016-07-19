@@ -32,7 +32,7 @@
 
 .home-item {
   color: black;
-  font-family: $abelfont;
+  font-family: $headfont;
   position: absolute;
   padding: 0px 15px;
   font-size: 50px;
@@ -50,7 +50,9 @@
    bottom: -146px;
   right: 250px;
   transform: rotate(340deg);
-  color: $yellow;
+  a {
+    color: $yellow;
+  }
   }
 }
 
@@ -66,8 +68,10 @@
   bottom: -82px;
   left: 226px;
   transform: rotate(370deg);
-  color: $pink;
+  a {
+    color: $pink;
   }
+}
 }
 
 .home-right-top {

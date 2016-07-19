@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="location-down">
-      <% @location.events.take(3).each do |event| %>
+      <% @events.order(:start_date).take(3).each do |event| %>
       <div class="location-event-card">
       <div class="location-card-info">
         <!-- show date -->

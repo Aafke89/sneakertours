@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-
+    @events = @location.events.where("end_date >= ?", Time.zone.now.beginning_of_day)
   end
 
   # def new
