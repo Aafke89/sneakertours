@@ -4,8 +4,10 @@
   Hoi <%= current_user.username %>
   <br><br>
   <div class="admin-choice">
-    <%= link_to "Events", admins_path(choice: 'events'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Locations", admins_path(choice: 'locations'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Show events", admins_path(choice: 'events'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Show locations", admins_path(choice: 'locations'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Add Event", new_event_path, class: "btn btn-loc-cat btn-space" %>
+     <%= link_to "Add Location", new_location_path, class: "btn btn-loc-cat btn-space" %>
   </div>
   <br>
 
