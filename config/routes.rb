@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :locations, only: [:show, :index, :new, :create, :edit, :update]
 
   resources :events, only: [:show, :index, :new, :create, :edit, :update]
+
+  resources :admins, only: [:index]
 end

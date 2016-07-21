@@ -1,11 +1,4 @@
 <div class="wrapper-gtm">
-<% if current_user %>
-  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "LOG IN", new_user_session_path %>
-<% end %>
-
-
   <div class="title-gtm text-center">
     Get the map!
   </div>
