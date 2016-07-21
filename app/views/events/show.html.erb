@@ -36,6 +36,9 @@
       <div class="event-waardan-info">
         <%= @event.location.name %> <br> <br>
         <%= @event.location.description %> <br>
+        <div class="event-link"> <br><br>
+        <%= link_to "Check this location", location_path(@event.location) %>
+        </div>
       </div>
 
     </div>
