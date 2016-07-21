@@ -59,12 +59,15 @@
 
 
     // create markers for every location
+    var i = 0;
     <% @locations.each do |loc| %>
+    i += 1;
     infowindow = new google.maps.InfoWindow({
       content: ""
     });
 
-    var marker = new google.maps.Marker({
+    setTimeout(function() {
+      var marker = new google.maps.Marker({
       position: {lat: <%= loc.latitude %>, lng: <%= loc.longitude %>},
       map: map,
       animation: google.maps.Animation.DROP,
@@ -75,6 +78,8 @@
                   );
           infowindow.open(map, this);
         });
+  }, i * 500);
+
     <% end %>
 
     stOverlay = new google.maps.GroundOverlay(
