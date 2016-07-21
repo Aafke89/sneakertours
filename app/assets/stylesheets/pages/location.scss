@@ -19,7 +19,7 @@
 
 .location-info {
   width: 50%;
-  height: 300px;
+  min-height: 300px;
   padding: 10px;
   position: relative;
   .location-title {
@@ -33,6 +33,7 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     text-align: justify;
+    margin-bottom: 20px;
   }
   .location-link {
     font-family: $abelfont;
