@@ -1,0 +1,23 @@
+<div class="wrapper-form">
+  <div class="form">
+    <div class="form-title">Edit thisLocation</div>
+    <%= simple_form_for [@location] do |f| %>
+    <!-- Show errormessages -->
+      <% if @location.errors.any? %>
+    <div class="alert alert-warning"> <%= @location.errors.messages.first[1].join %> </div>
+    <% end %>
+    <!-- The rest of the form -->
+    <%= f.input :name, placeholder: "Location", label:false %>
+    <%= f.input :description, placeholder: "description", label:false %>
+    <%= f.input :address, placeholder: "Kalverstraat 23", label: false %>
+
+    <%= f.input :link, placeholder: "http://www.location.nl", label:false %>
+    <%= f.input :picture, placeholder: "url to image", label:false %> <br>
+   <div class="text-center">Category:</div>
+    <%= f.input :category, collection: ["culture", "bar", "food", "party", "shop", "chill"], label: false %> <br><br>
+
+    <!-- Submit this event -->
+    <%= f.button :submit, class: "btn-loc-cat text-center"  %>
+    <% end %>
+  </div>
+</div>

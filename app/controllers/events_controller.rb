@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :find_event, only: [:show]
+  before_action :find_event, only: [:show, :edit, :update]
   before_action :filter_events, only: [:index]
 
   def index
@@ -14,14 +14,23 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-
-
   def create
     @event = Event.new(event_params)
     if @event.save
       redirect_to event_path(@event)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to event_path
+    else
+      render "edit"
     end
   end
 

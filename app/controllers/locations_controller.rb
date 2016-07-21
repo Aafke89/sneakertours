@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :find_location, only: [:show]
+  before_action :find_location, only: [:show, :edit, :update]
   before_action :filter_locations, only: [:index]
   def index
     # @locations = Location.all
@@ -29,6 +29,17 @@ class LocationsController < ApplicationController
       redirect_to location_path(@location)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @location.update(location_params)
+      redirect_to location_path
+    else
+      render "edit"
     end
   end
 
