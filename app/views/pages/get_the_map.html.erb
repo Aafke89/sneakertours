@@ -1,0 +1,20 @@
+<div class="wrapper-gtm">
+  <div class="title-gtm text-center">
+    Get the map!
+  </div>
+  <div class="content-gtm">
+  <div class="images-gtm">
+    <%= image_tag "st-folded", class: "st-folded" %>
+    <%= image_tag "st-not-folded", class: "st-unfolded" %>
+    </div>
+    Do you want this flashy orange guide to Amsterdam? <br>
+    Send us an email with your adress and we'll send you the map for ....
+    <br><br>
+    Or go to one of this awesome locations to get one:
+    <ul>
+      <li>
+        <%= link_to "Brandend zand", location_path(Location.find(16))  %>
+      </li>
+    </ul>
+    </div>
+  </div>
