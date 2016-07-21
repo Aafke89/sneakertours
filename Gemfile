@@ -31,6 +31,7 @@ gem 'gmaps4rails'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'jquery-ui-rails'
+gem 'devise'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
