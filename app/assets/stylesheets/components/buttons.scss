@@ -12,3 +12,19 @@
     color: white;
   }
 }
+
+.btn-admin-actions {
+  background-color: $pink;
+  color: black;
+  border-radius: 3px;
+  font-family: $abelfont;
+  margin: 3px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+   &:active {
+    background-color: black;
+    color: white;
+  }
+}

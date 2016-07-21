@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/pages/:page" => "pages#show"
 
-  resources :locations, only: [:show, :index, :new, :create, :edit, :update]
+  resources :locations, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 
   resources :events, only: [:show, :index, :new, :create, :edit, :update]
 

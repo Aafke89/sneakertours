@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :find_location, only: [:show, :edit, :update]
+  before_action :find_location, only: [:show, :edit, :update, :destroy]
   before_action :filter_locations, only: [:index]
   def index
     # @locations = Location.all
@@ -41,6 +41,11 @@ class LocationsController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @location.destroy
+    redirect_to admins_path
   end
 
   private

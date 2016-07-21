@@ -1,0 +1,7 @@
+<div class="admins-login">
+ <% if current_user %>
+  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-loc-cat" %>
+  <% else %>
+  <%= link_to "LOG IN", new_user_session_path, class: "btn btn-loc-cat" %>
+<% end %>
+</div>

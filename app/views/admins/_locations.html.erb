@@ -1,0 +1,23 @@
+Locations <br><br>
+<div class="admins-locations">
+    <% @locations.each do |loc| %>
+    id: <%= loc.id %> <br>
+    name: <%= loc.name %>  <br>
+    description: <%= loc.description %> <br>
+    category: <%= loc.category %> <br>
+    address: <%= loc.address %> <br>
+    link: <%= loc.link %> <br>
+    picture: <%= loc.picture %> <br>
+    <%= link_to "see", location_path(loc), class:"btn btn-admin-actions" %>
+    <%= link_to "edit", edit_location_path(loc), class:"btn btn-admin-actions" %>
+    <%= link_to "delete", location_path(loc), method: :delete, class:"btn btn-admin-actions", data: {confirm: "Are you sure to delete this post?"} %>
+    <hr>
+
+    <% end %>
+    <div class="events-pagination">
+         <%= will_paginate @locations,
+        :previous_label => "<",
+        :next_label     => ">"
+    %>
+  </div>
+  </div>

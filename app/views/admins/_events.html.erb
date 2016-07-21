@@ -1,0 +1,20 @@
+<div class="admins-events">
+    <% @events.each do |ev|%>
+    title: <%= ev.title %> <br>
+    description: <%= ev.description %> <br>
+    link: <%= ev.link %> <br>
+    image: <%= ev.image %> <br>
+    location: <%= ev.location.name %> <br>
+    start_date: <%= ev.start_date %> <br>
+    end_date <%= ev.end_date %> <br>
+    <%= link_to "see", event_path(ev), class:"btn btn-admin-actions" %>
+    <%= link_to "edit", edit_event_path(ev), class:"btn btn-admin-actions" %>
+    <%= link_to "delete", event_path(ev), method: :delete, class:"btn btn-admin-actions", data: {confirm: "Are you sure to delete this post?"} %>
+    <hr>
+    <% end %>
+    <div class="events-pagination">
+         <%= will_paginate @events,
+        :previous_label => "<",
+        :next_label     => ">"
+    %>
+  </div>

@@ -1,21 +1,22 @@
 <div class="admins-wrapper">
 
-<div class="admins-login">
- <% if current_user %>
-  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-loc-cat" %>
-  <% else %>
-  <%= link_to "LOG IN", new_user_session_path, class: "btn btn-loc-cat" %>
-<% end %>
-</div>
-
-
-  <div class="admins-content">
-    HOI <%= current_user.username %>
+ <div class="admins-content">
+  Hoi <%= current_user.username %>
+  <br><br>
+  <div class="admin-choice">
+    <%= link_to "Events", admins_path(choice: 'events'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to "Locations", admins_path(choice: 'locations'), class: "btn btn-loc-cat btn-space" %>
   </div>
+  <br>
 
-
-
-
+  <% if @choice && @choice == 'events' %>
+  <%= render 'events' %>
+  <% elsif @choice && @choice == 'locations' %>
+  <%= render 'locations' %>
+  <% else %>
+  <%= render 'events' %>
+  <% end %>
+</div>
 </div>
 
 
