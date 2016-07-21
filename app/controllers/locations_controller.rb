@@ -19,23 +19,27 @@ class LocationsController < ApplicationController
     @events = @location.events.where("end_date >= ?", Time.zone.now.beginning_of_day)
   end
 
-  # def new
-  #   @location = Location.new
-  # end
+  def new
+    @location = Location.new
+  end
 
-  # def create
-  #   @location = Location.new(location_params)
-  #   if @location.save
-  #     redirect_to location_path(@location)
-  #   else
-  #     render: new
-  #   end
-  # end
+  def create
+    @location = Location.new(location_params)
+    if @location.save
+      redirect_to location_path(@location)
+    else
+      render :new
+    end
+  end
 
   private
 
   def find_location
     @location = Location.find(params[:id])
+  end
+
+  def location_params
+    params.require(:location).permit(:name, :description, :category, :picture, :link, :address)
   end
 
   def filter_locations
@@ -46,9 +50,5 @@ class LocationsController < ApplicationController
       @locations = Location.all
     end
   end
-
-  # def location_params
-  #   params.require(:location).permit(:name, :description, :category, :picture, :link, :address)
-  # end
 
 end

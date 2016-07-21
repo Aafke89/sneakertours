@@ -9,6 +9,7 @@
   max-width: 450px;
   background-color: rgba(255, 238, 0, 0.21);
   padding: 20px;
+  font-family: $headfont;
 }
 
 .form-title {
@@ -71,6 +72,10 @@ select {
   font-family: $headfont;
 }
 
+.location_category {
+font-family: $headfont;
+
+}
 
 
 label {
