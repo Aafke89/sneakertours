@@ -54,23 +54,39 @@
   $(document).on('ready', function() {
     var myLatLng = {lat: <%= @event.location.latitude %>, lng: <%= @event.location.longitude %>};
 
-    var imageBounds = {
-      north: 52.402162,
-      south: 52.346415,
-      east: 4.978654,
-      west: 4.853680
-    };
+    // var imageBounds = {
+    //   north: 52.402162,
+    //   south: 52.346415,
+    //   east: 4.978654,
+    //   west: 4.853680
+    // };
 
     var map = new google.maps.Map(document.getElementById('event-map'), {
-      zoom: 15,
+      zoom: 12,
+      minZoom: 12,
       center: myLatLng,
+      draggable: true,
+      scrollwheel: false,
+      mapTypeControl: false,
       styles: window.mapStyle
+    });
+
+    map.addListener('zoom_changed', function(map){
+      lockBounds(this)
+    });
+
+    map.addListener('dragend', function(map){
+      lockBounds(this)
+    });
+
+    map.addListener('idle', function(map){
+      lockBounds(this)
     });
 
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      animation: google.maps.Animation.BOUNCE,
+      animation: google.maps.Animation.DROP,
       icon: "http://res.cloudinary.com/aafke/image/upload/v1468500999/markerblauw_rsfl86.png"
     });
 
