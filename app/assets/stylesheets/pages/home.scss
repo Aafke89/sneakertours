@@ -3,6 +3,9 @@
   width: 100vw;
   background-color: white;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-logo {
@@ -13,9 +16,6 @@
 }
 
 .home-tagline {
-  position: absolute;
-  top: 200px;
-  left: 0px;
   width: 100%;
   z-index: 999;
   font-size: 50px;
