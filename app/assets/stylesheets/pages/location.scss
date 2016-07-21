@@ -53,10 +53,19 @@
   height: 300px;
 }
 
+.location-no-events {
+  font-family: $abelfont;
+  padding: 20px;
+  a {
+    color: $pink;
+  }
+}
+
 .location-down {
   display: flex;
   justify-content: space-around;
   padding: 20px;
+  min-height: 100px;
   background-color: rgba(247, 119, 244, 0.14);
   .location-event-card {
     background-color: white;

@@ -15,28 +15,35 @@
       </div>
     </div>
     <div class="location-down">
+      <% if @events.length > 0 %>
       <% @events.order(:start_date).take(3).each do |event| %>
       <div class="location-event-card">
-      <div class="location-card-info">
-        <!-- show date -->
-        <div class="location-event-card-date">
-          <% a = event.end_date - event.start_date %>
-          <% if (a / 60 / 60) >= 24 %>
-          <%= event.start_date.strftime("%e %b") %> -  <%= event.end_date.strftime("%e %b") %> <br>
-          <% else %>
-          <%= event.start_date.strftime("%e %b") %> <br>
-          <% end %>
-        </div>
-        <div class="location-event-card-title">
-          <%= event.title %>
-        </div>
+        <div class="location-card-info">
+          <!-- show date -->
+          <div class="location-event-card-date">
+            <% a = event.end_date - event.start_date %>
+            <% if (a / 60 / 60) >= 24 %>
+            <%= event.start_date.strftime("%e %b") %> -  <%= event.end_date.strftime("%e %b") %> <br>
+            <% else %>
+            <%= event.start_date.strftime("%e %b") %> <br>
+            <% end %>
+          </div>
+          <div class="location-event-card-title">
+            <%= event.title %>
+          </div>
         </div>
         <div class="location-card-image">
-        <%= image_tag event.image %>
-      </div>
+          <%= image_tag event.image %>
+        </div>
         <%= link_to "", event_path(event), class: "location-event-card-link"   %>
       </div>
-    <% end %>
+      <% end %>
+      <% else %>
+
+   <p class="location-no-events">We didn't find any cool upcoming events at <%= @location.name %> for now. Check their <%= link_to "website", @location.link  %> for all their events.
+</p>
+      <% end %>
+
     </div>
   </div>
 </div>

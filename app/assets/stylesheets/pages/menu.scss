@@ -1,11 +1,14 @@
 .menu-crosses {
-  position: absolute;
+  position: fixed;
   font-family: $abelfont;
   font-size: 30px;
-  top: 250px;
+  top: 0px;
   left: 20px;
   z-index: 999;
   color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   a {
     color: black;
   }
@@ -38,7 +41,7 @@
 }
 
 .menu-home {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   z-index: 100;
