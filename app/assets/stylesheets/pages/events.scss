@@ -1,10 +1,7 @@
 .wrapper-events {
     padding: 80px 40px;
-    // background: linear-gradient(to right, white, $yellow);
     min-height: 100vh;
     position: relative;
-    // background-color: $pink;
-    // z-index: -2;
   }
 
   .events-background {
@@ -95,6 +92,11 @@
   height: 300px;
   width: 200px;
   z-index:2;
+}
+
+.add_event {
+  text-align: right;
+  margin: 20px 40px;
 }
 
 @media screen and (max-width: 480px) {

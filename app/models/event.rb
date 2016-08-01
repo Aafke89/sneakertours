@@ -11,8 +11,10 @@ class Event < ActiveRecord::Base
   validates :description, presence: true, length: {minimum: 50}
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :email, presence: true
   validates_format_of :link, with: /\A#{URI::regexp}\z/, :message => "Please fill in a correct adress including http:// of https://"
   validates_format_of :image, with: /\A#{URI::regexp}\z/, :message => "Please fill in a correct adress including http:// of https://"
+  validates_format_of :email, with: /@/
 
   validate :validate_start_date
   validate :validate_end_date

@@ -2,6 +2,7 @@
     padding: 80px 40px;
     background: linear-gradient(to right, white, $pink);
     min-height: 100vh;
+    display: flex;
 }
 
 .form {
@@ -82,4 +83,20 @@ label {
   color: red;
 }
 
+.form-description {
+  margin: 75px auto;
+  max-width: 260px;
+  font-family: $abelfont;
+}
+
+@media screen and (max-width: 840px) {
+  .wrapper-form {
+    display: block;
+  }
+  .form-description {
+  margin: 75px auto;
+  max-width: 450px;
+  font-family: $abelfont;
+}
+}
 

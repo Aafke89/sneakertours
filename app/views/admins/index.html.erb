@@ -1,0 +1,32 @@
+<div class="admins-wrapper">
+<div class="admins-content">
+
+  <!-- Some general options -->
+  <div class="admin_choices_upper">
+    <%= link_to "Add Event", new_event_path, class: "btn btn-loc-admin btn-space" %>
+    <%= link_to "Add Location", new_location_path, class: "btn btn-loc-admin btn-space" %>
+
+    <%= link_to "Show events", admins_path(choice: 'events'), class: "btn btn-loc-admin btn-space" %>
+    <%= link_to "Show locations", admins_path(choice: 'locations'), class: "btn btn-loc-admin btn-space" %>
+
+    <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-loc-admin log-out-admin" %>
+  </div>
+
+  <!-- Render the info here -->
+  <div class="admins-content-down">
+  <div class="welcome_admin">
+      Currently logged in as: <%= current_user.username %>
+    </div>
+    <% if @choice && @choice == 'events' %>
+    <%= render 'events' %>
+    <% elsif @choice && @choice == 'locations' %>
+    <%= render 'locations' %>
+    <% else %>
+    <%= render 'events' %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
+

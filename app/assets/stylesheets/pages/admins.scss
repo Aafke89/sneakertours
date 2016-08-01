@@ -1,0 +1,61 @@
+.admins-wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: $pink;
+  padding: 80px 60px;
+  position: relative;
+}
+
+.admin_choices_upper {
+  background-color: $yellow;
+  position: relative;
+  background-color: black;
+  .log-out-admin {
+    background-color: black;
+    position: absolute;
+    right: 0px;
+    border-right: none;
+    &:hover {
+       background-color: $yellow;
+    }
+  }
+}
+
+.admins-content {
+  min-width: 600px;
+  min-height: 300px;
+  background-color: white;
+  margin: auto
+}
+
+.admins-content-down {
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.welcome_admin {
+  font-size: 18px;
+  font-family: $abelfont;
+  text-align: right;
+}
+
+.admins-login {
+  position: absolute;
+  right: 60px;
+  top: 25px;
+  text-align: right;
+}
+
+.admins-actions {
+  display: flex;
+}
+
+.admin-card {
+  background-color: rgba(227, 225, 29, 0.1);
+  padding: 10px;
+  margin: 10px 0px;
+  font-family: $abelfont;
+}
+
+.admin-card-links {
+}

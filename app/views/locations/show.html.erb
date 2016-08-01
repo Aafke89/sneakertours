@@ -40,14 +40,17 @@
       <% end %>
       <% else %>
 
-   <p class="location-no-events">We didn't find any cool upcoming events at <%= @location.name %> for now. Check their <%= link_to "website", @location.link  %> for all their events.
-</p>
+      <p class="location-no-events">We didn't find any cool upcoming events at <%= @location.name %> for now. Check their <%= link_to "website", @location.link  %> for all their events.
+      </p>
       <% end %>
 
     </div>
   </div>
-<br><br><br>
-<div class="text-center"><%= link_to "edit this location", edit_location_path(@location) ,class: "btn btn-loc-cat"  %></div>
+  <!-- Show link to edit event to admin -->
+  <% if current_user && current_user.permission == "admin" %>
+  <br><br><br>
+  <div class="text-center"><%= link_to "edit this location", edit_location_path(@location) ,class: "btn btn-loc-cat"  %></div>
+  <% end %>
 
 </div>
 </div>

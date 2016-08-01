@@ -1,13 +1,11 @@
 <div class="wrapper-events">
   <div class="events-background"></div>
- <!--  <div class="events-title">
-    What's going on?
-  </div> -->
   <div class="events-content">
     <div class="container">
       <div class="row">
         <% @events.order(:start_date).each do |event| %>
         <div class="col-xs-6 col-sm-4 col-md-3">
+        <!-- Start of event-card -->
           <div class="events-card">
            <%= link_to "", event_path(event), class: "event-card-link"  %>
           <!-- make random up and down pictures-->
@@ -43,9 +41,13 @@
         </div>
         <% end %>
       </div>
+      <!-- End of event-card -->
     </div>
-
   </div>
+  <div class="add_event">
+  Missing an event? <br>
+ <%= link_to "Add an Event", new_event_path, class: "btn btn-add-event"  %></div>
+  <!-- SHow the pagination -->
   <div class="events-pagination">
          <%= will_paginate @events,
         :previous_label => "<",

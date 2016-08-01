@@ -14,7 +14,13 @@
     <% @locations.each do |location| %>
     <%= link_to location.name, location_path(location) %> <br>
     <% end %>
+    <div class="add_location">
+  Missing a location? <br>
+ <%= link_to "Add a Location", new_location_path, class: "btn btn-add-location"  %></div>
   </div>
+
+
+
 
 
 </div>

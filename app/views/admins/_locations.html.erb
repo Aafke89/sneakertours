@@ -1,0 +1,48 @@
+<div class="admins-events">
+  <h1>LOCATIONS</h1>
+<div class="sort_locations">
+<!-- pending/accepted/declined -->
+<%= link_to "show pending", admins_path(choice: "locations", status: "pending"), class: "btn btn-admin-actions" %>
+<%= link_to "show accepted", admins_path(choice: "locations", status: "accepted"), class: "btn btn-admin-actions" %>
+<%= link_to "show declined", admins_path(choice: "locations", status: "declined"), class: "btn btn-admin-actions" %>
+<%= link_to "show all", admins_path(choice: "locations"), class: "btn btn-admin-actions" %>
+</div>
+
+<!-- Sort on added_date  -->
+<div class="admins-locations">
+    <% @locations.each do |loc| %>
+    <div class="admin-card">
+    <%= loc.status%> <br>
+    id: <%= loc.id %> <br>
+    name: <%= loc.name %>  <br>
+    description: <%= loc.description %> <br>
+    category: <%= loc.category %> <br>
+    address: <%= loc.address %> <br>
+    link: <%= loc.link %> <br>
+    picture: <%= loc.picture %> <br>
+    email:  <%= loc.email %> <br>
+    <div class="admin-card-links">
+    <!-- Show button to accept or decline -->
+    <% if loc.status == "pending" %>
+      <%= link_to "accept", accept_location_path(loc), method: :patch, class:"label label-success"  %>
+      <%= link_to "decline", decline_location_path(loc), method: :patch , class: "label label-danger"  %>
+    <% elsif loc.status == "accepted" %>
+      <%= link_to "decline", decline_location_path(loc), method: :patch , class: "label label-danger"  %>
+    <% elsif loc.status == "declined" %>
+     <%= link_to "accept", accept_location_path(loc), method: :patch, class:"label label-success"  %>
+    <% end %>
+    <!-- Show other buttons -->
+    <%= link_to "see", location_path(loc), class:"btn btn-admin-actions" %>
+    <%= link_to "edit", edit_location_path(loc), class:"btn btn-admin-actions" %>
+    <%= link_to "delete", location_path(loc), method: :delete, class:"btn btn-admin-actions", data: {confirm: "Are you sure to delete this location?"} %>
+  </div>
+  </div>
+    <% end %>
+    <div class="events-pagination">
+         <%= will_paginate @locations,
+        :previous_label => "<",
+        :next_label     => ">"
+    %>
+  </div>
+  </div>
+  </div>

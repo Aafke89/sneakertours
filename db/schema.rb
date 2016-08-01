@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709114338) do
+ActiveRecord::Schema.define(version: 20160801141415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20160709114338) do
     t.datetime "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "email"
+    t.string   "status"
   end
 
   add_index "events", ["location_id"], name: "index_events_on_location_id", using: :btree
@@ -41,7 +43,29 @@ ActiveRecord::Schema.define(version: 20160709114338) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "category"
+    t.string   "email"
+    t.string   "status"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.string   "permission"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "events", "locations"
 end
