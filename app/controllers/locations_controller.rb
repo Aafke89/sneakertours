@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-    # Set status to pending unless curren_user is an admin
+    # Set status to pending unless current_user is an admin
     if current_user && current_user.permission == "admin"
       @location.status = "accepted"
     else

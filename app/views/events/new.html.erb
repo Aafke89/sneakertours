@@ -2,15 +2,18 @@
   <div class="form">
     <div class="form-title">Add an Event</div>
     <%= simple_form_for [@event] do |f| %>
+
     <!-- Show errormessages -->
       <% if @event.errors.any? %>
     <div class="alert alert-warning"> <%= @event.errors.messages.first[1].join %> </div>
     <% end %>
+
     <!-- The rest of the form -->
     <%= f.input :title, placeholder: "title", label:false %>
     <%= f.input :description, placeholder: "description", label:false %>
     <%= f.input :link, placeholder: "http://www.event.nl", label:false %>
     <%= f.input :image, placeholder: "url to image", label:false %> <br>
+
     <!-- Input fields for the start and end date -->
     <div class="date_box">
     <div class="start_date">
@@ -22,8 +25,16 @@
        <%= f.input :end_date, as: :datetime, time_separator: '', label:false %>
     </div>
     </div>
+
     <!-- Select a location -->
     <%= f.collection_select :location_id, Location.all, :id, :name %> <br> <br>
+
+    <!-- Ask for email -->
+    <% if current_user %>
+      <%= f.input :email, input_html: {value: current_user.email || ""}, label: false%>
+    <% else %>
+      <%= f.input :email, placeholder: "your email here", label: false%>
+    <% end %> <br><br>
     <!-- Submit this event -->
     <%= f.button :submit, class: "btn-loc-cat text-center"  %>
     <% end %>

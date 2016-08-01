@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   before_action :authenticate_admin, only: [:index]
   before_action :select_locations, only: [:index]
+  before_action :filter_events, only: [:select_events, :index]
   before_action :select_events, only: [:index]
   before_action :admin_choice, only: [:index]
   before_action :show_logout, only: [:index]
@@ -39,8 +40,25 @@ class AdminsController < ApplicationController
     end
   end
 
+  def filter_events
+    if params[:time] == "past"
+      @filtered_events = Event.where("end_date <= ?", Time.zone.now.beginning_of_day )
+    else
+      @filtered_events = Event.where("end_date >= ?", Time.zone.now.beginning_of_day )
+    end
+  end
+
   def select_events
-    @events = Event.all.order(:start_date).paginate(page: params[:page], per_page: 10)
+    @status = params[:status]
+    if @status == "pending"
+      @events = @filtered_events.where(status: "pending").order(:start_date).paginate(page: params[:page], per_page: 10)
+    elsif @status == "accepted"
+      @events = @filtered_events.where(status: "accepted").order(:start_date).paginate(page: params[:page], per_page: 10)
+    elsif @status == "declined"
+       @events = @filtered_events.where(status: "declined").order(:start_date).paginate(page: params[:page], per_page: 10)
+    else
+       @events = @filtered_events.all.order(:start_date).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   # Show logout instead of link to adminpage on adminpanel

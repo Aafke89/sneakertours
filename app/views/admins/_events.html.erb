@@ -1,25 +1,47 @@
 <div class="admins-events">
   <h1>EVENTS</h1>
-    <% @events.each do |ev|%>
-    <div class="admin-card">
+  <div class="sort_locations">
+    <!-- pending/accepted/declined -->
+    <%= link_to "show pending", admins_path(choice: "events", status: "pending"), class: "btn btn-admin-actions" %>
+    <%= link_to "show accepted", admins_path(choice: "events", status: "accepted"), class: "btn btn-admin-actions" %>
+    <%= link_to "show declined", admins_path(choice: "events", status: "declined"), class: "btn btn-admin-actions" %>
+    <%= link_to "show all", admins_path(choice: "events"), class: "btn btn-admin-actions" %>
+    <!-- past/coming up --> <br><br>
+    <%= link_to "Coming up", admins_path(choice: "events", status: @status, time: "coming"), class: "btn btn-admin-actions" %>
+    <%= link_to "Past", admins_path(choice: "events", status: @status, time: "past"), class: "btn btn-admin-actions" %>
+
+  </div>
+  <% @events.each do |ev|%>
+  <div class="admin-card">
+    <%= ev.status%> <br>
     title: <%= ev.title %> <br>
     description: <%= ev.description %> <br>
     link: <%= ev.link %> <br>
     image: <%= ev.image %> <br>
     location: <%= ev.location.name %> <br>
-    start_date: <%= ev.start_date %> <br>
-    end_date <%= ev.end_date %> <br>
-     <div class="admin-card-links">
-    <%= link_to "see", event_path(ev), class:"btn btn-admin-actions" %>
-    <%= link_to "edit", edit_event_path(ev), class:"btn btn-admin-actions" %>
-    <%= link_to "delete", event_path(ev), method: :delete, class:"btn btn-admin-actions", data: {confirm: "Are you sure to delete this post?"} %>
-        </div>
-      </div>
-
+    start_date: <%= ev.start_date.strftime("%e %b %H:%M") %> <br>
+    end_date <%= ev.end_date.strftime("%e %b %H:%M") %> <br>
+    <div class="admin-card-links">
+      <!-- Show button to accept or decline -->
+    <% if ev.status == "pending" %>
+      <%= link_to "accept", accept_event_path(ev), method: :patch, class:"label label-success"  %>
+      <%= link_to "decline", decline_event_path(ev), method: :patch , class: "label label-danger"  %>
+    <% elsif ev.status == "accepted" %>
+      <%= link_to "decline", decline_event_path(ev), method: :patch , class: "label label-danger"  %>
+    <% elsif ev.status == "declined" %>
+     <%= link_to "accept", accept_event_path(ev), method: :patch, class:"label label-success"  %>
     <% end %>
-    <div class="events-pagination">
-         <%= will_paginate @events,
-        :previous_label => "<",
-        :next_label     => ">"
-    %>
+    <!-- other links -->
+      <%= link_to "see", event_path(ev), class:"btn btn-admin-actions" %>
+      <%= link_to "edit", edit_event_path(ev), class:"btn btn-admin-actions" %>
+      <%= link_to "delete", event_path(ev), method: :delete, class:"btn btn-admin-actions", data: {confirm: "Are you sure to delete this event?"} %>
+    </div>
   </div>
+
+  <% end %>
+  <div class="events-pagination">
+   <%= will_paginate @events,
+   :previous_label => "<",
+   :next_label     => ">"
+   %>
+ </div>

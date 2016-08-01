@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
-  before_action :find_event, only: [:show, :edit, :update]
+  before_action :find_event, only: [:show, :edit, :update, :destroy, :accept, :decline]
   before_action :filter_events, only: [:index]
   before_action :authenticate_admin, only: [:edit, :update]
 
   def index
-    @events = @filtered_events.paginate(page: params[:page], per_page: 6)
+    @events = @filtered_events.where(status: "accepted").paginate(page: params[:page], per_page: 6)
   end
 
   def show
@@ -17,6 +17,12 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    # Set status to pending unless current_user is an admin
+    if current_user && current_user.permission == "admin"
+      @event.status = "accepted"
+    else
+      @event.status = "pending"
+    end
     if @event.save
       redirect_to event_path(@event)
     else
@@ -35,6 +41,21 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event.destroy
+    redirect_to admins_path(choice: "events")
+  end
+
+  def accept
+    @event.update(status: "accepted")
+    redirect_to admins_path(choice: "events")
+  end
+
+  def decline
+    @event.update(status: "declined")
+    redirect_to admins_path(choice: "events")
+  end
+
   private
 
   def find_event
@@ -42,7 +63,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :location_id, :description, :link, :image, :start_date, :end_date)
+    params.require(:event).permit(:title, :location_id, :description, :link, :image, :start_date, :end_date, :email)
   end
 
   def filter_events

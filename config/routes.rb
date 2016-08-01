@@ -14,7 +14,13 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :events, only: [:show, :index, :new, :create, :edit, :update]
+  resources :events, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
+    member do
+        patch :accept
+        patch :decline
+      end
+  end
+
 
   resources :admins, only: [:index]
 end

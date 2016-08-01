@@ -6,9 +6,9 @@
 <%= link_to "show accepted", admins_path(choice: "locations", status: "accepted"), class: "btn btn-admin-actions" %>
 <%= link_to "show declined", admins_path(choice: "locations", status: "declined"), class: "btn btn-admin-actions" %>
 <%= link_to "show all", admins_path(choice: "locations"), class: "btn btn-admin-actions" %>
+</div>
 
 <!-- Sort on added_date  -->
-</div>
 <div class="admins-locations">
     <% @locations.each do |loc| %>
     <div class="admin-card">
