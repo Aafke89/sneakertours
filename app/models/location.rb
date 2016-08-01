@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
 
   # relations
-  has_many :events
+  has_many :events, dependent: :destroy
 
   #validations
   validates :name, presence: true, length: {minimum: 2, maximum: 30}, uniqueness: true

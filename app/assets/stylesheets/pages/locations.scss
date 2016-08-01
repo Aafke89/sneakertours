@@ -1,5 +1,4 @@
 .wrapper-locations {
-    // padding: 80px 40px;
   position: relative;
 }
 
@@ -24,6 +23,17 @@
     color: black;
     &:hover {
       color: $pink;
+    }
+  }
+}
+
+.add_location {
+  margin-top: 60px;
+  text-align: center;
+  a {
+    color: white;
+    &:hover {
+      color: black;
     }
   }
 

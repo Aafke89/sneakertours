@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update]
   before_action :filter_events, only: [:index]
+  before_action :authenticate_admin, only: [:edit, :update]
 
   def index
     @events = @filtered_events.paginate(page: params[:page], per_page: 6)
@@ -46,6 +47,12 @@ class EventsController < ApplicationController
 
   def filter_events
     @filtered_events = Event.where("end_date >= ?", Time.zone.now.beginning_of_day )
+  end
+
+  def authenticate_admin
+    if !current_user || current_user.permission != "admin"
+      redirect_to new_user_session_path, notice: "Please log in as an admin first"
+    end
   end
 
 

@@ -15,6 +15,12 @@
     <%= f.input :picture, placeholder: "url to image", label:false %> <br>
    <div class="text-center">Category:</div>
     <%= f.input :category, collection: ["culture", "bar", "food", "party", "shop", "chill"], label: false %> <br><br>
+    <% if current_user %>
+      <%= f.input :email, input_html: {value: current_user.email || ""}, label: false%>
+    <% else %>
+      <%= f.input :email, placeholder: "your email here", label: false%>
+    <% end %> <br><br>
+
 
     <!-- Submit this event -->
     <%= f.button :submit, class: "btn-loc-cat text-center"  %>
