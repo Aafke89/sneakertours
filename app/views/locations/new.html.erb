@@ -26,4 +26,10 @@
     <%= f.button :submit, class: "btn-loc-cat text-center"  %>
     <% end %>
   </div>
+  <% if !current_user || current_user.permission != "admin"%>
+  <div class="form-description">
+    Hi! Here you can add a location that you think should be on our website. Try to be as complete as possible. After one of our admins accepted it, it will be shown on our website. It could be that we'll make small changes. <br>
+    As we would like to know who is adding events we are asking for your emailadress. This will only be used very sparcely by us and will not be given to third parties.
+  </div>
+  <% end %>
 </div>
