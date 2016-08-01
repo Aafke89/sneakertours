@@ -78,9 +78,9 @@ class LocationsController < ApplicationController
   def filter_locations
     @category = params[:category]
     if @category && @category != "all"
-      @locations = Location.where(category: @category)
+      @locations = Location.where(category: @category, status: "accepted")
     else
-      @locations = Location.all
+      @locations = Location.where(status: "accepted")
     end
   end
 
