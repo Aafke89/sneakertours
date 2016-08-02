@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/pages/:page" => "pages#show"
 
+  resources :contacts, only: [:new, :create]
+
   resources :locations, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
     member do
         patch :accept

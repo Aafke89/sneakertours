@@ -32,6 +32,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'jquery-ui-rails'
 gem 'devise'
+gem 'mail_form'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
