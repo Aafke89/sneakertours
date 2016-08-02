@@ -71,17 +71,28 @@
   width: 100%;
 }
 
-.event-card-dateloc {
-  text-align: right;
-  padding-top: 10px;
-  padding-right: 10px;
+.event-card-date {
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 28px;
+}
+
+.event-card-loc {
+    text-align: center;
+    width: 100%;
+    background-color: $pink;
+    color: white;
+    font-size: 28px;
 }
 
 .event-card-title {
-  text-align: right;
-  padding-top: 12px;
+  text-align: center;
+  padding: 18px;
   font-size: 24px;
-  font-family: $abelfont;
+  background-color: $almost-white;
+  font-family: $headfont;
   padding-right: 10px;
 }
 

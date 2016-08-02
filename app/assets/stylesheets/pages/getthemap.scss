@@ -11,14 +11,21 @@
 }
 
 .content-gtm {
-  margin: auto;
+  margin: 20px auto;
   max-width: 700px;
   background-color: white;
   position: relative;
   padding-bottom: 200px;
   font-family: $abelfont;
+  font-size: 18px;
   padding: 10px;
+  .content-gtm-small{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
 }
+
 
 .images-gtm {
   display: flex;

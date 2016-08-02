@@ -9,12 +9,22 @@
           <div class="events-card">
            <%= link_to "", event_path(event), class: "event-card-link"  %>
           <!-- make random up and down pictures-->
-          <% if event.id % 2 == 0 %>
-            <div class="event-card-text-up">
-          <% else %>
+          <%# if event.id % 2 == 0 %>
+            <!-- <div class="event-card-text-up"> -->
+          <%# else %>
             <div class="event-card-text-down">
-          <% end %>
-              <div class="event-card-dateloc">
+          <%# end %>
+
+
+              <div class="event-card-title">
+                <%= event.title %>
+              </div>
+
+              <div class="event-card-loc">
+                <%= event.location.name %>
+              </div>
+
+               <div class="event-card-date">
                 <!-- Show startdate and enddate when difference is more than 24 hours -->
                 <% a = event.end_date - event.start_date %>
                 <% if (a / 60 / 60) >= 24 %>
@@ -22,19 +32,15 @@
                 <% else %>
                     <%= event.start_date.strftime("%e %b") %> <br>
                 <% end %>
+                </div>
 
-                <%= event.location.name %>
-              </div>
-              <div class="event-card-title">
-                <%= event.title %>
-              </div>
 
             </div>
-            <% if event.id % 2 == 0 %>
-              <div class="event-card-image-down">
-            <% else %>
+            <%# if event.id % 2 == 0 %>
+              <!-- <div class="event-card-image-down"> -->
+            <%# else %>
                <div class="event-card-image-up">
-            <% end %>
+            <%# end %>
               <%= image_tag event.always_image %>
             </div>
           </div>
