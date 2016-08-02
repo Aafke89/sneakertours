@@ -35,8 +35,8 @@
       <div class="event-waardan">Where is this?</div>
       <div class="event-waardan-info">
         <%= @event.location.name %> <br> <br>
-        <%= @event.location.description %> <br>
-        <div class="event-link"> <br><br>
+        <%= truncate(@event.location.description, :length => 100) %>
+        <div class="event-link"> <br>
         <%= link_to "Check this location", location_path(@event.location) %>
         </div>
       </div>
