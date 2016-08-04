@@ -9,10 +9,20 @@ class PagesController < ApplicationController
 
   end
 
+  def form
+    FormMailer.form(contact_params).deliver_now
+    redirect_to root_path
+ +    flash[:notice] = "E-mail succesfully sent"
+  end
+
 
   private
 
   def disable_nav
     @disable_nav = true
+  end
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

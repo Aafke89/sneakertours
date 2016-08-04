@@ -3,11 +3,11 @@
     Send us a message!
   </div>
     <div class="form">
-    <%= simple_form_for "mail" do |f| %>
+    <%= simple_form_for :contact, url: contact_path do |f| %>
     <!-- The rest of the form -->
     <%= f.input :name, placeholder: "name", label:false %>
     <%= f.input :email, placeholder: "email", label:false %>
-    <%= f.input :messages, placeholder: "your message here", label:false %>
+    <%= f.input :message, placeholder: "your message here", label:false %>
     <!-- Submit this event -->
     <%= f.button :submit, class: "btn-loc-cat text-center"  %>
     <% end %>
