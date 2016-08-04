@@ -33,6 +33,7 @@ gem 'will_paginate'
 gem 'jquery-ui-rails'
 gem 'devise'
 gem 'mail_form'
+gem 'figaro'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
@@ -50,6 +51,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'foreman'
 end
 
 group :development do

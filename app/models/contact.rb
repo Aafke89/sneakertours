@@ -1,4 +1,6 @@
 class Contact < MailForm::Base
+  include MailForm::Delivery
+
   attribute :name,      :validate => true
   attribute :email
   attribute :message
@@ -7,9 +9,14 @@ class Contact < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "testmail",
-      :to => "aafke.smal@gmail.com",
-      :from => %("#{name}" <#{email}>)
+
+      subject: "testmail",
+
+      to: "aafke.smal@gmail.com",
+
+      from: %("#{name}" <#{email}>)
     }
   end
+
+
 end
