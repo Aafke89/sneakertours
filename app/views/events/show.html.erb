@@ -1,3 +1,8 @@
+<% content_for :meta_title , @event.name  %>
+<% content_for :meta_description , @event.description  %>
+<% content_for :meta_image , @event.always_image %>
+
+
 <div class="wrapper-event" style="background-image: url(<%= @event.always_image %>)">
   <div class="event-content">
     <!-- Date of the event (one day or more) -->

@@ -18,7 +18,9 @@
     description: <%= ev.description %> <br>
     link: <%= ev.link %> <br>
     image: <%= ev.image %> <br>
-    location: <%= ev.location.name %> <br>
+    <% if ev.location %>
+      location: <%= ev.location.name %> <br>
+    <% end %>
     start_date: <%= ev.start_date.strftime("%e %b %H:%M") %> <br>
     end_date <%= ev.end_date.strftime("%e %b %H:%M") %> <br>
     <div class="admin-card-links">
