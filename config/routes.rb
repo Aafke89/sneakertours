@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/pages/:page" => "pages#show"
 
-  post '/contact', to: 'pages#form'
+  post 'pages/contact', to: 'pages#form'
 
   resources :locations, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
     member do
