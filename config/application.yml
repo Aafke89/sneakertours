@@ -4,5 +4,5 @@ development:
 
 production:
   HOST: 'sneakertours.herokuapp.com'
-  POSTMARK_API_TOKEN: "7ad6e632-40c4-4359-88b1-7f9c0ec3e5c6"
+  POSTMARK_API_TOKEN: "f1f5ae80-fbd4-4dbf-ae10-01fce8cda4ef"
 
