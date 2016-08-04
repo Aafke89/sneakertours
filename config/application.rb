@@ -33,7 +33,7 @@ module Sneakertours
     config.active_record.raise_in_transactional_callbacks = true
 
     config.action_mailer.delivery_method = :postmark
-    config.action_mailer.postmark_settings = { :api_token => "f1f5ae80-fbd4-4dbf-ae10-01fce8cda4ef" }
+    config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_TOKEN'] }
 
   end
 end
