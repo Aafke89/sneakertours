@@ -36,6 +36,7 @@ gem 'mail_form'
 gem 'figaro'
 
 gem 'postmark-rails'
+gem 'puma'
 
 gem 'letter_opener', group: :development
 
