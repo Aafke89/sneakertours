@@ -63,8 +63,8 @@
 
 </div>
 
-
-<% content_for(:after_js) do %>
+<% if @event.location %>
+  <% content_for(:after_js) do %>
 <script type="text/javascript">
   $(document).on('ready', function() {
     var myLatLng = {lat: <%= @event.location.latitude %>, lng: <%= @event.location.longitude %>};
@@ -112,5 +112,11 @@
 
   })
 </script>
+<% end %>
+
+
+
+
+
 <% end %>
 
