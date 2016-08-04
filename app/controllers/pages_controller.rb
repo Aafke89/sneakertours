@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def form
     FormMailer.form(contact_params).deliver
     redirect_to root_path
- +    flash[:notice] = "E-mail succesfully sent"
+ # +    flash[:notice] = "E-mail succesfully sent"
   end
 
 
