@@ -1,8 +1,0 @@
-development:
-  GOOGLE_API_KEY: "AIzaSyB01fu7jjQeTWnmeP_5cacIWXV_U5XHg4U"
-  CLOUDINARY_URL: "cloudinary://845967915794319:K7kJkXGnETBq5aSzxBmBXsMWnSA@aafke"
-
-production:
-  HOST: 'sneakertours.herokuapp.com'
-  POSTMARK_API_TOKEN: "f1f5ae80-fbd4-4dbf-ae10-01fce8cda4ef"
-
