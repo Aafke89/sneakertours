@@ -39,7 +39,7 @@
     <div class="event-location">
       <div class="event-waardan">Where is this?</div>
       <div class="event-waardan-info">
-      <% if event.location %>
+      <% if @event.location %>
           <%= @event.location.name %> <br> <br>
         <%= truncate(@event.location.description, :length => 100) %>
         <div class="event-link"> <br>
