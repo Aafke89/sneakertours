@@ -37,6 +37,7 @@ gem 'figaro'
 
 gem 'postmark-rails'
 gem 'puma'
+gem 'rails_12factor', group: :production
 
 gem 'letter_opener', group: :development
 
