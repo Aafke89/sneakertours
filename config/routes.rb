@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   post '/contact', to: 'pages#form'
 
-  resources :contacts, only: [:new, :create]
-
   resources :locations, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
     member do
         patch :accept
