@@ -1,22 +1,22 @@
-class Contact < MailForm::Base
-  include MailForm::Delivery
+# class Contact < MailForm::Base
+#   include MailForm::Delivery
 
-  attribute :name,      :validate => true
-  attribute :email
-  attribute :message
+#   attribute :name,      :validate => true
+#   attribute :email
+#   attribute :message
 
-  # Declare the e-mail headers. It accepts anything the mail method
-  # in ActionMailer accepts.
-  def headers
-    {
+#   # Declare the e-mail headers. It accepts anything the mail method
+#   # in ActionMailer accepts.
+#   def headers
+#     {
 
-      subject: "testmail",
+#       subject: "testmail",
 
-      to: "aafke.smal@gmail.com",
+#       to: "aafke.smal@gmail.com",
 
-      from: %("#{name}" <#{email}>)
-    }
-  end
+#       from: %("#{name}" <#{email}>)
+#     }
+#   end
 
 
-end
+# end

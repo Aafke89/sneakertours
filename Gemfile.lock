@@ -108,6 +108,12 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    postmark (1.8.1)
+      json
+      rake
+    postmark-rails (0.13.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.8.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -196,6 +202,7 @@ DEPENDENCIES
   letter_opener
   mail_form
   pg (~> 0.15)
+  postmark-rails
   rails (= 4.2.6)
   rails-assets-underscore!
   sass-rails (~> 5.0)

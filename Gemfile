@@ -35,6 +35,8 @@ gem 'devise'
 gem 'mail_form'
 gem 'figaro'
 
+gem 'postmark-rails'
+
 gem 'letter_opener', group: :development
 
 source 'https://rails-assets.org' do

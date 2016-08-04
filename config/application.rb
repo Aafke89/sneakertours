@@ -31,5 +31,7 @@ module Sneakertours
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.action_mailer.delivery_method = :postmark
+config.action_mailer.postmark_settings = { :api_token => "7ad6e632-40c4-4359-88b1-7f9c0ec3e5c6" }
   end
 end
