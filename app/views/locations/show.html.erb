@@ -1,3 +1,7 @@
+<% content_for :meta_title , @location.name %>
+<% content_for :meta_description , @location.description  %>
+<% content_for :meta_image , @location.picture %>
+
 <div class="wrapper-location" style="background-image: url(<%= @location.picture %>)">
   <div class="location-content">
     <div class="location-up">
