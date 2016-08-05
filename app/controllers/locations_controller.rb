@@ -72,7 +72,7 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:name, :description, :category, :picture, :link, :address, :email)
+    params.require(:location).permit(:name, :description, :category, :picture, :picture_cache, :link, :address, :email)
   end
 
   def filter_locations

@@ -36,8 +36,10 @@ gem 'figaro'
 gem 'postmark-rails'
 gem 'puma'
 gem 'social-share-button'
-gem 'rails_12factor', group: :production
+gem 'cloudinary'
+gem 'carrierwave'
 
+gem 'rails_12factor', group: :production
 gem 'letter_opener', group: :development
 
 source 'https://rails-assets.org' do

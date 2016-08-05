@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+
     # Set status to pending unless current_user is an admin
     if current_user && current_user.permission == "admin"
       @event.status = "accepted"
@@ -63,7 +64,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :location_id, :description, :link, :image, :start_date, :end_date, :email)
+    params.require(:event).permit(:title, :location_id, :description, :link, :image, :image_cache, :start_date, :end_date, :email)
   end
 
   def filter_events

@@ -6,6 +6,9 @@ class Event < ActiveRecord::Base
   belongs_to :location
 
 
+  mount_uploader :image, ImageUploader
+
+
   # validations
   validates :title, presence: true, length: {minimum: 3, maximum: 30}
   validates :description, presence: true, length: {minimum: 50}

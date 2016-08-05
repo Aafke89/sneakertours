@@ -3,6 +3,9 @@ class Location < ActiveRecord::Base
   # relations
   has_many :events, dependent: :destroy
 
+  mount_uploader :picture, ImageUploader
+
+
   #validations
   validates :name, presence: true, length: {minimum: 2, maximum: 30}, uniqueness: true
   validates :description, presence: true, length: {minimum: 50}

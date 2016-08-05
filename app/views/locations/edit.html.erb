@@ -12,7 +12,10 @@
     <%= f.input :address, placeholder: "Kalverstraat 23", label: false %>
 
     <%= f.input :link, placeholder: "http://www.location.nl", label:false %>
-    <%= f.input :picture, placeholder: "url to image", label:false %> <br>
+
+    <%= f.input :picture %>
+    <%= f.input :picture_cache, as: :hidden %>
+
    <div class="text-center">Category:</div>
     <%= f.input :category, collection: ["culture", "bar", "food", "party", "shop", "chill"], label: false %> <br><br>
 
