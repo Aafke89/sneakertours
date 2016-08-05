@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="location-card-image">
-          <%= image_tag event.image %>
+          <%= cl_image_tag event.image %>
         </div>
         <%= link_to "", event_path(event), class: "location-event-card-link"   %>
       </div>

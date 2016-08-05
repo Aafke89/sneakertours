@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def form
     FormMailer.form(contact_params).deliver_now
+    raise 'unicorn'
     redirect_to root_path, notice: "Email is sent"
   end
 

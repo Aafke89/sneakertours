@@ -4,7 +4,7 @@ class FormMailer < ApplicationMailer
     @email = contact_params["email"]
     @message = contact_params["message"]
 
-    mail(to: "aafke.smal@gmail.com", subject: "Form Sneaker Tours")
+    mail(to: "aafke.smal@gmail.com", subject: "Form Sneaker Tours", from: "info@sneakertours.nl")
   end
 
 end
