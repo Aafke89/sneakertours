@@ -15,7 +15,9 @@
     <%= f.input :title, placeholder: "title", label:false %>
     <%= f.input :description, placeholder: "description", label:false %>
     <%= f.input :link, placeholder: "http://www.event.nl", label:false %>
-    <%= f.input :image, placeholder: "url to image", label:false %> <br>
+
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
 
     <!-- Input fields for the start and end date -->
     <div class="date_box">
