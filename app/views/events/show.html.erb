@@ -29,6 +29,7 @@
     <%= @event.description %>
   </div>
   <div class="event-link">
+    <%= social_share_button_tag(@event.title, image: @event.always_image) %>
     <%= link_to "check the eventpage", @event.link %>
   </div>
 

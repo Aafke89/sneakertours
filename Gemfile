@@ -32,11 +32,10 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'jquery-ui-rails'
 gem 'devise'
-gem 'mail_form'
 gem 'figaro'
-
 gem 'postmark-rails'
 gem 'puma'
+gem 'social-share-button'
 gem 'rails_12factor', group: :production
 
 gem 'letter_opener', group: :development

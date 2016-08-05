@@ -28,7 +28,9 @@
 }
 
 .add_location {
-  margin-top: 60px;
+  position: absolute;
+  bottom: 60px;
+  width: 84%;
   text-align: center;
   a {
     color: white;
@@ -36,7 +38,12 @@
       color: black;
     }
   }
+}
 
+.locations-social {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
 }
 
 .locations-buttons {

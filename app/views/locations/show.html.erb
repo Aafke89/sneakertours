@@ -11,9 +11,10 @@
       <div class="location-info">
         <div class="location-title"> <%= @location.name %></div>
         <div class="location-description">
-          <%= @location.description %>
+          <%= @location.description %> <br><br><br>
         </div>
         <div class="location-link">
+          <%= social_share_button_tag(@location.name, image: @location.picture) %>
           <%= link_to "visit their website", @location.link  %>
         </div>
       </div>
