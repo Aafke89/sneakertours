@@ -3,9 +3,14 @@
   padding: 10px;
   width: 100%;
   font-family: $abelfont;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
   a {
     color: white;
     margin: 20px;
   }
+}
+
+.footer-rest {
+  border-left: 1px solid white;
 }

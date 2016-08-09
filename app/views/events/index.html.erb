@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <% @events.order(:start_date).each do |event| %>
-        <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="col-xs-12 col-sm-4 col-md-3">
         <!-- Start of event-card -->
           <div class="events-card">
            <%= link_to "", event_path(event), class: "event-card-link"  %>

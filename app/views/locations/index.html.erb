@@ -13,6 +13,10 @@
     <%= link_to "Chill/Outdoors", locations_path(category: 'chill'), class: "btn btn-loc-cat btn-space" %>
     <%= link_to "All", locations_path(category: 'all'), class: "btn btn-loc-cat btn-space" %>
   </div>
+  <div class="location-list-btn">
+     <div class="btn btn-loc-list-show">Show list</div>
+    <div class="btn btn-loc-list-hide">Hide list</div>
+  </div>
   <div class="locations-list">
     <% @locations.each do |location| %>
     <%= link_to location.name, location_path(location) %> <br>

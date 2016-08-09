@@ -107,6 +107,31 @@
   background-color: $pink;
 }
 
+@media screen and (max-width: 400px) {
+  .event-time, .event-date {
+    font-size: 37px;
+  }
+  .wrapper-event {
+    padding: 80px 10px;
+  }
+  .event-content {
+    padding-bottom: 20px;
+  }
+  .event-details {
+    position: relative;
+    display: inline-block;
+  }
+  #event-map {
+    height: 200px;
+    width: 100%;
+  }
+  .event-location {
+    width: 100%;
+  }
+}
+
+
+
 
 
 

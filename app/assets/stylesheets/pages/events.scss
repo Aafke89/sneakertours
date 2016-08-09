@@ -1,21 +1,21 @@
 .wrapper-events {
-    padding: 80px 40px;
-    min-height: 100vh;
-    position: relative;
-  }
+  padding: 80px 40px;
+  min-height: 100vh;
+  position: relative;
+}
 
-  .events-background {
-   position: absolute;
-   right: 0;
-   bottom: 0;
-   height: 0;
-   width: 0;
-   border-bottom: 450px solid #e3e11d;
-    border-left: 2000px solid transparent;
-    z-index: -1;
- }
+.events-background {
+ position: absolute;
+ right: 0;
+ bottom: 0;
+ height: 0;
+ width: 0;
+ border-bottom: 450px solid #e3e11d;
+ border-left: 2000px solid transparent;
+ z-index: -1;
+}
 
- .events-title {
+.events-title {
   font-family: $headfont;
   font-size: 40px;
   text-align: right;
@@ -31,7 +31,7 @@
   width: 200px;
   height: 300px;
   position: relative;
-  margin: 10px auto;
+  margin: 20px auto;
   font-family: $abelfont;
 }
 
@@ -72,28 +72,31 @@
 }
 
 .event-card-date {
-    text-align: center;
-    width: 100%;
-    background-color: black;
-    color: white;
-    font-size: 28px;
+  text-align: center;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 28px;
 }
 
 .event-card-loc {
-    text-align: center;
-    width: 100%;
-    background-color: $pink;
-    color: white;
-    font-size: 28px;
+  text-align: center;
+  width: 100%;
+  background-color: $pink;
+  color: white;
+  font-size: 28px;
 }
 
 .event-card-title {
   text-align: center;
-  padding: 18px;
   font-size: 24px;
   background-color: $almost-white;
   font-family: $headfont;
   padding-right: 10px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .event-card-link {
@@ -120,5 +123,8 @@
   .wrapper-events {
     padding: 80px 0px;
     margin-left: -15px;
+  }
+  .events-card {
+    width: 260px;
   }
 }

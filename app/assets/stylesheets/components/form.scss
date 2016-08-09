@@ -1,6 +1,9 @@
 .wrapper-form {
     padding: 80px 40px;
-    background: linear-gradient(to right, white, $pink);
+    background-color: $yellow;
+    background-image: url("cafekat.jpg");
+    background-size: cover;
+    // background: linear-gradient(to right, white, $pink);
     min-height: 100vh;
     display: flex;
 }
@@ -8,7 +11,9 @@
 .form {
   margin: auto;
   max-width: 450px;
-  background-color: rgba(255, 238, 0, 0.21);
+  background-color: $yellow;
+  border: 1px solid rgb(224, 222, 33);
+  // background-color: rgba(255, 238, 0, 0.21);
   padding: 20px;
   font-family: $headfont;
 }
@@ -80,7 +85,16 @@ font-family: $headfont;
 
 
 label {
-  color: red;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  margin-left: 5px;
+}
+
+.send {
+  margin: 5px;
 }
 
 .form-description {
@@ -88,6 +102,18 @@ label {
   max-width: 260px;
   font-family: $abelfont;
 }
+
+.contact_email {
+  padding: 5px;
+}
+
+#contact_message {
+    height: 200px;
+    padding: 0px;
+    border: 0px;
+    width: 400px;
+    margin: 5px;
+  }
 
 @media screen and (max-width: 840px) {
   .wrapper-form {
@@ -98,5 +124,17 @@ label {
   max-width: 450px;
   font-family: $abelfont;
 }
+}
+
+@media screen and (max-width: 540px) {
+  .string, .text, select, #contact_message {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .string, .text, select, #contact_message {
+    width: 200px;
+  }
 }
 

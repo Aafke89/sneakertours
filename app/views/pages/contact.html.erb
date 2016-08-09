@@ -5,11 +5,11 @@
     <div class="form">
     <%= simple_form_for :contact, url: pages_contact_path do |f| %>
     <!-- The rest of the form -->
-    <%= f.input :name, placeholder: "name", label:false %>
-    <%= f.input :email, placeholder: "email", label:false %>
-    <%= f.input :message, placeholder: "your message here", label:false %>
+    <%= f.input :name, placeholder: "Your name", label:false %>
+    <%= f.input :email, placeholder: "Your email", label:false %>
+    <%= f.text_area :message, placeholder: "Tell/Ask us everything!", label:false %>
     <!-- Submit this event -->
-    <%= f.button :submit, class: "btn-loc-cat text-center"  %>
+    <%= f.button :submit, value: "Send", class: "btn-loc-cat send"  %>
     <% end %>
 </div>
 </div>

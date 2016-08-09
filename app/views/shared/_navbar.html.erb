@@ -1,8 +1,0 @@
-<div class="admins-login">
-<% if current_user && current_user.permission == "admin" %>
-  <%= link_to "Go to adminpanel", admins_path, class: "btn btn-loc-cat" %>
- <% elsif current_user && current_user.permission != "admin" %>
- you are logged in with: <%= current_user.email %> <br>
- <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "btn btn-loc-cat" %>
- <% end %>
-</div>

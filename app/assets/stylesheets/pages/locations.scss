@@ -49,11 +49,46 @@
 .locations-buttons {
   position: absolute;
   top: 80px;
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   margin-left: 80px;
-  .btn-space {
+}
+
+.location-list-btn {
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  display: none;
+}
+
+.btn-loc-list-hide {
+  display: none;
+}
+
+@media screen and (max-width: 510px) {
+  .locations-buttons {
+    display: inline-block;
+    margin-left: 20px;
+    .btn-space {
+      margin-bottom: 10px;
+    }
+  }
+  .locations-list {
+    display: none;
+    top: 165px;
+    left: 20px;
+    width: 90%;
+    opacity: 0.9;
+  }
+  .location-list-btn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .locations-list {
+    display: block;
   }
 }
 

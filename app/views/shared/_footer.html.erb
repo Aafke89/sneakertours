@@ -1,7 +1,18 @@
 <div class="footer">
-  <%= link_to "about us", "/pages/about"  %>
-  <%= link_to "contact us", "/pages/contact"  %>
-  <%= link_to "disclaimer", "/pages/disclaimer"  %>
+  <span class="footer-admin">
+    <% if current_user && current_user.permission == "admin" %>
+    <%= link_to "Go to adminpanel", admins_path %>
+    <% elsif current_user && current_user.permission != "admin" %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "Log In", new_user_session_path %>
+    <% end %>
+  </span>
+  <span class="footer-rest">
+    <%= link_to "about us", "/pages/about"  %>
+    <%= link_to "contact us", "/pages/contact"  %>
+    <%= link_to "disclaimer", "/pages/disclaimer"  %>
 
-  <%= link_to "like us!", "https://www.facebook.com/sneakertours"  %>
+    <%= link_to "like us!", "https://www.facebook.com/sneakertours"  %>
+  </span>
 </div>
