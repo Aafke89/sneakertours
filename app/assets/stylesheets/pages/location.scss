@@ -113,3 +113,39 @@
     }
 }
 
+.location-event-plain {
+  display: none;
+}
+
+.location-event-link-small {
+  font-size: 22px;
+  margin-left: 10px;
+  color: black;
+  &:hover {
+    color: $pink;
+  }
+}
+
+@media screen and (max-width: 540px) {
+.location-up {
+  display: block;
+}
+#location-map, .location-info {
+  width: 100%;
+}
+.location-event-plain {
+  display: block;
+}
+.location-event-card {
+  display: none;
+}
+.location-down {
+  display: inline-block;
+  width: 100%;
+  font-family: $abelfont;
+}
+
+
+}
+
+

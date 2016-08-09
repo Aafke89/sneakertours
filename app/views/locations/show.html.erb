@@ -22,6 +22,17 @@
     <div class="location-down">
       <% if @events.length > 0 %>
       <% @events.order(:start_date).take(3).each do |event| %>
+      <!-- on mobile -->
+      <div class="location-event-plain">
+        <% a = event.end_date - event.start_date %>
+            <% if (a / 60 / 60) >= 24 %>
+            <%= event.start_date.strftime("%e %b") %> -  <%= event.end_date.strftime("%e %b") %>
+            <% else %>
+            <%= event.start_date.strftime("%e %b") %>
+            <% end %>
+            <%= link_to event.title, event_path(event), class: "location-event-link-small" %>
+      </div>
+      <!-- on bigger devices -->
       <div class="location-event-card">
         <div class="location-card-info">
           <!-- show date -->
