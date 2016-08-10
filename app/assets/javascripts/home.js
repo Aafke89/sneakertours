@@ -53,6 +53,7 @@ setTimeout(function(){
   setTimeout(function() {$(".get-the-map-cat-left").fadeOut()}, 3400 )
   setTimeout(function() {$(".get-the-map-cat-right").fadeIn()}, 3500 )
   setTimeout(function() {$(".get-the-map-cat-right").fadeOut()}, 10000 )
+  setTimeout(function() {$(".wagentje").fadeIn()}, 12000 )
 }, 6000);
 
 

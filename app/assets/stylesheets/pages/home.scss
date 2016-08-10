@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .home-logo {
@@ -21,6 +22,7 @@
   font-size: 50px;
   font-family: $abelfont;
   font-weight: bolder;
+
   .home-tagline-text{
     text-align: center;
   }
@@ -118,6 +120,29 @@
   display: none;
   img {
     height: 600px;
+  }
+}
+
+.wagentje {
+  position: absolute;
+  top: 120px;
+  left: 20;
+  display: none;
+  img {
+    height: 500px;
+  }
+  .get-the-map-cat-words {
+    font-size: 22px;
+    font-family: $headfont;
+    padding: 10px 20px;
+    background-color: $yellow;
+    position: absolute;
+    top: 260px;
+    left: 80px;
+    z-index: 1000;
+    a {
+      color: black;
+    }
   }
 }
 
