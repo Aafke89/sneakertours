@@ -19,7 +19,11 @@
         </div>
       </div>
     </div>
+    <% if @events.length > 0 %>
+    <div class="title-event">Events in <%= @location.name  %>:</div>
+    <% end %>
     <div class="location-down">
+
       <% if @events.length > 0 %>
       <% @events.order(:start_date).take(3).each do |event| %>
       <!-- on mobile -->

@@ -62,6 +62,15 @@
   }
 }
 
+.title-event {
+  width: 100%;
+  background-color: rgba(247, 119, 244, 0.14);
+  text-align: center;
+  padding-top: 15px;
+  font-family: $headfont;
+
+}
+
 .location-down {
   display: flex;
   justify-content: space-around;
@@ -96,8 +105,11 @@
         font-size: 22px;
        }
     .location-event-card-title {
-        text-align: center;
-        font-family: $abelfont;
+      height: 60px;
+      display: flex;
+      align-items: center;
+        justify-content: center;
+        font-family: $headfont;
         color: black;
         font-size: 22px;
         background-color: $pink;
