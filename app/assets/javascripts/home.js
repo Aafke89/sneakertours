@@ -16,10 +16,10 @@
 
 function partyParty() {
   // Shows the textballoon with party now and then
-  var animationparty1 = $(".couch-party").removeClass("hidden");
-  var animationparty2 = setTimeout(function() {$(".couch-party").addClass("hidden");}, 300 )
-  var animationparty3 = setTimeout(function() {$(".couch-party").removeClass("hidden");}, 400 )
-  var animationparty4 = setTimeout(function() {$(".couch-party").addClass("hidden");}, 1200 )
+  var animationparty1 = setTimeout(function() {$(".couch-party").removeClass("hidden");}, 400 )
+  var animationparty2 = setTimeout(function() {$(".couch-party").addClass("hidden");}, 700 )
+  var animationparty3 = setTimeout(function() {$(".couch-party").removeClass("hidden");}, 1200 )
+  var animationparty4 = setTimeout(function() {$(".couch-party").addClass("hidden");}, 1400 )
   animationparty1
    animationparty2
     animationparty3
@@ -48,6 +48,15 @@ setInterval(function(){
 
 
 
+setTimeout(function(){
+  $(".get-the-map-cat-left").fadeOut(function(){
+    $(".get-the-map-cat-right").fadeIn();
+    setTimeout(function() {$(".get-the-map-cat-right").hide();}, 8000 )
+  });
+}, 3000);
+
+
+
 
 // move the word "locations"
 $(".open-locations").on("mouseenter", function(){
@@ -64,12 +73,15 @@ $(".open-locations").on("mouseleave", function(){
 // move the word "events"
 $(".open-events").on("mouseenter", function(){
   $(".item-events").css("bottom", "-136px");
-  $(".home-couch").effect("bounce", "slow");
-  setInterval(partyParty, 8000);
+  $(".home-couch").effect("bounce",{distance: 10}, "slow");
+  partyParty()
+  // setInterval(partyParty, 8000);
 });
 
 $(".open-events").on("mouseleave", function(){
   $(".item-events").css("bottom", "-146px");
+  $(".couch-party").addClass("hidden");
+
 });
 
 
