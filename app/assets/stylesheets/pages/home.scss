@@ -91,10 +91,10 @@
 .get-the-map-cat-right {
   position: absolute;
   top: 190px;
-  left: -40px;
+  left: -140px;
   display: none;
   img {
-    height: 400px;
+    height: 600px;
   }
 }
 
@@ -102,13 +102,11 @@
   position: absolute;
   top: 190px;
   left: 0;
+  display: none;
   img {
-    height: 400px;
+    height: 600px;
   }
 }
-
-
-
 
 // animate couch
 
@@ -124,69 +122,136 @@
   }
 }
 
-
-
-
 // animate bike
+.home-locations {
+  width: 100vw;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 300px;
+  overflow: hidden;
+}
 
 .home-bike-1 {
   position: absolute;
   bottom: 0px;
-  left: 80px;
+  left: -300px;
   z-index: 400;
-  width: 600px;
   height: 200px;
-  -webkit-animation: movebike-1 20s ease 1;
-  -moz-animation: movebike-1 20s ease 1;
-  -o-animation: movebike-1 20s ease 1;
+  -webkit-animation: movebike-1 20s ease 3;
+  -moz-animation: movebike-1 20s ease 3;
+  -o-animation: movebike-1 20s ease 3;
 }
 
 .home-bike-2 {
   position: absolute;
   bottom: 0px;
-  left: 80px;
+  left: -300px;
   z-index: 400;
-  width: 600px;
   height: 200px;
-  -webkit-animation: movebike-2 20s ease 1;
-  -moz-animation: movebike-2 20s ease 1;
-  -o-animation: movebike-2 20s ease 1;
+  -webkit-animation: movebike-2 20s ease 3;
+  -moz-animation: movebike-2 20s ease 3;
+  -o-animation: movebike-2 20s ease 3;
 }
 
+
+// .home-bike-1 {
+//   position: absolute;
+//   bottom: 0px;
+//   left: 80px;
+//   z-index: 400;
+//   width: 600px;
+//   height: 200px;
+//   -webkit-animation: movebike-1 20s ease 1;
+//   -moz-animation: movebike-1 20s ease 1;
+//   -o-animation: movebike-1 20s ease 1;
+// }
+
+// .home-bike-2 {
+//   position: absolute;
+//   bottom: 0px;
+//   left: 80px;
+//   z-index: 400;
+//   width: 600px;
+//   height: 200px;
+//   -webkit-animation: movebike-2 20s ease 1;
+//   -moz-animation: movebike-2 20s ease 1;
+//   -o-animation: movebike-2 20s ease 1;
+// }
+
 @-webkit-keyframes movebike-1 {
-  0% {margin-left: -1000px;}
-  32% {margin-left: 100px;}
-  100% {margin-left: 1200px;}
+  0% {margin-left: -300px;}
+  32% {margin-left: 900px;}
+  100% {margin-left: 2200px;}
 }
 @-moz-keyframes movebike-1 {
-  0% {margin-left: -1000px;}
-  32% {margin-left: 100px;}
-  100% {margin-left: 1200px;}
+  0% {margin-left: -300px;}
+  32% {margin-left: 900px;}
+  100% {margin-left: 2200px;}
 }
 @-o-keyframes movebike-1 {
-  0% {margin-left: -1000px;}
-  32% {margin-left: 100px;}
-  100% {margin-left: 1200px;}
+  0% {margin-left: -300px;}
+  32% {margin-left: 900px;}
+  100% {margin-left: 2200px;}
 }
 
 @-webkit-keyframes movebike-2 {
-  0% {display: block; margin-left: -1000px; opacity: 0;}
-  32% {margin-left: 100px;}
-  100% {display: block; margin-left: 1200px; opacity: 0;}
+  0% {display: block; margin-left: -300px; opacity: 0;}
+  32% {margin-left: 900px;}
+  100% {display: block; margin-left: 2200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
 @-moz-keyframes movebike-2 {
-  0% {display: block; margin-left: -1000px; opacity: 0;}
-  32% {margin-left: 100px;}
-  100% {display: block; margin-left: 1200px; opacity: 0;}
+  0% {display: block; margin-left: -300px; opacity: 0;}
+  32% {margin-left: 900px;}
+  100% {display: block; margin-left: 2200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
 @-o-keyframes movebike-2 {
-  0% {display: block; margin-left: -1000px; opacity: 0;}
-  32% {margin-left: 100px;}
-  100% {display: block; margin-left: 1200px; opacity: 0;}
+  0% {display: block; margin-left: -300px; opacity: 0;}
+  32% {margin-left: 900px;}
+  100% {display: block; margin-left: 2200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
+
+
+// @-webkit-keyframes movebike-1 {
+//   0% {margin-left: -1000px;}
+//   32% {margin-left: 100px;}
+//   100% {margin-left: 2200px;}
+// }
+// @-moz-keyframes movebike-1 {
+//   0% {margin-left: -1000px;}
+//   32% {margin-left: 100px;}
+//   100% {margin-left: 1200px;}
+// }
+// @-o-keyframes movebike-1 {
+//   0% {margin-left: -1000px;}
+//   32% {margin-left: 100px;}
+//   100% {margin-left: 1200px;}
+// }
+
+// @-webkit-keyframes movebike-2 {
+//   0% {display: block; margin-left: -1000px; opacity: 0;}
+//   32% {margin-left: 100px;}
+//   100% {display: block; margin-left: 1200px; opacity: 0;}
+//   31%, 33%, 35% {display: block; opacity: 0;}
+//   32%, 34% {display: block; opacity: 1;}
+// }
+// @-moz-keyframes movebike-2 {
+//   0% {display: block; margin-left: -1000px; opacity: 0;}
+//   32% {margin-left: 100px;}
+//   100% {display: block; margin-left: 1200px; opacity: 0;}
+//   31%, 33%, 35% {display: block; opacity: 0;}
+//   32%, 34% {display: block; opacity: 1;}
+// }
+// @-o-keyframes movebike-2 {
+//   0% {display: block; margin-left: -1000px; opacity: 0;}
+//   32% {margin-left: 100px;}
+//   100% {display: block; margin-left: 1200px; opacity: 0;}
+//   31%, 33%, 35% {display: block; opacity: 0;}
+//   32%, 34% {display: block; opacity: 1;}
+// }

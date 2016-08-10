@@ -49,12 +49,11 @@ setInterval(function(){
 
 
 setTimeout(function(){
-  $(".get-the-map-cat-left").fadeOut(function(){
-    $(".get-the-map-cat-right").fadeIn();
-    setTimeout(function() {$(".get-the-map-cat-right").hide();}, 8000 )
-  });
-}, 3000);
-
+  setTimeout(function() {$(".get-the-map-cat-left").fadeIn()}, 400 )
+  setTimeout(function() {$(".get-the-map-cat-left").fadeOut()}, 3400 )
+  setTimeout(function() {$(".get-the-map-cat-right").fadeIn()}, 3500 )
+  setTimeout(function() {$(".get-the-map-cat-right").fadeOut()}, 10000 )
+}, 6000);
 
 
 
