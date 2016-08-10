@@ -96,6 +96,19 @@
   img {
     height: 600px;
   }
+  .get-the-map-cat-words {
+    font-size: 22px;
+    font-family: $headfont;
+    padding: 10px 20px;
+    background-color: $yellow;
+    position: absolute;
+    top: 260px;
+    left: 240px;
+    z-index: 1000;
+    a {
+      color: black;
+    }
+  }
 }
 
 .get-the-map-cat-left {
@@ -182,37 +195,37 @@
 @-webkit-keyframes movebike-1 {
   0% {margin-left: -300px;}
   32% {margin-left: 900px;}
-  100% {margin-left: 2200px;}
+  100% {margin-left: 3200px;}
 }
 @-moz-keyframes movebike-1 {
   0% {margin-left: -300px;}
   32% {margin-left: 900px;}
-  100% {margin-left: 2200px;}
+  100% {margin-left: 3200px;}
 }
 @-o-keyframes movebike-1 {
   0% {margin-left: -300px;}
   32% {margin-left: 900px;}
-  100% {margin-left: 2200px;}
+  100% {margin-left: 3200px;}
 }
 
 @-webkit-keyframes movebike-2 {
   0% {display: block; margin-left: -300px; opacity: 0;}
   32% {margin-left: 900px;}
-  100% {display: block; margin-left: 2200px; opacity: 0;}
+  100% {display: block; margin-left: 3200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
 @-moz-keyframes movebike-2 {
   0% {display: block; margin-left: -300px; opacity: 0;}
   32% {margin-left: 900px;}
-  100% {display: block; margin-left: 2200px; opacity: 0;}
+  100% {display: block; margin-left: 3200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
 @-o-keyframes movebike-2 {
   0% {display: block; margin-left: -300px; opacity: 0;}
   32% {margin-left: 900px;}
-  100% {display: block; margin-left: 2200px; opacity: 0;}
+  100% {display: block; margin-left: 3200px; opacity: 0;}
   31%, 33%, 35% {display: block; opacity: 0;}
   32%, 34% {display: block; opacity: 1;}
 }
