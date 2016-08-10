@@ -1,8 +1,8 @@
 <div class="wrapper-form">
-  <div class="title-gtm text-center">
-    Send us a message!
-  </div>
-    <div class="form">
+  <div class="form">
+    <div class="form-title">
+      Send us a message!
+    </div>
     <%= simple_form_for :contact, url: pages_contact_path do |f| %>
     <!-- The rest of the form -->
     <%= f.input :name, placeholder: "Your name", label:false %>
@@ -11,5 +11,5 @@
     <!-- Submit this event -->
     <%= f.button :submit, value: "Send", class: "btn-loc-cat send"  %>
     <% end %>
-</div>
+  </div>
 </div>

@@ -3,21 +3,28 @@
     Get the map!
   </div>
   <div class="content-gtm">
-  <div class="images-gtm">
-    <%= image_tag "st-folded", class: "st-folded" %>
-    <%= image_tag "st-not-folded", class: "st-unfolded" %>
+    <div class="images-gtm">
+      <%= image_tag "st-folded", class: "st-folded" %>
+      <%= image_tag "st-not-folded", class: "st-unfolded" %>
+
+
+
+
     </div>
-    Do you want this flashy orange guide to Amsterdam? <br>
-    Send us an email with your adress and we'll send you the map for ....
-    <br><br>
-    Or go to one of this awesome locations to get one:
-    <ul>
-      <li>
-        <%= link_to "Brandend zand", location_path(Location.find(16))  %>
-      </li>
-    </ul>
-    </div>
-    <div class="gtm-social">
-    <%= social_share_button_tag %>
-    </div>
+
+    It’s bright, it’s handmade and it fits in your pocket… it’s the Sneaker Tours map of Amsterdam! We
+    decided to make a printed version of our map, including 71 of the nicest places on-and- off the
+    track. The map is a one of a kind product, riso printed with lots of love in Amsterdam. A sample version
+    is now available for only €2,50 a piece. <br> <br>
+    Do you want this flashy orange guide to Amsterdam? Order one now trough our <%= link_to "contact form", pages_contact_path, class: "st-link" %>. You can either come pick them up or we can send them to your house (sending costs are on you though)! <br> <br>
+
+    Or pick them up at one of our awesome locations: <br>
+    <p>&emsp;  <%= link_to "Brandend zand", "#", class: "st-link"  %></p>
+
+    Size: A3, folded up to A6 (fits in your pocket). <br>
+    Colors: medium blue, fluo orange and deep purple.
   </div>
+  <div class="gtm-social">
+    <%= social_share_button_tag %>
+  </div>
+</div>

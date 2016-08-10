@@ -1,7 +1,7 @@
 .wrapper-form {
     padding: 80px 40px;
     background-color: $yellow;
-    background-image: url("cafekat.jpg");
+    background-image: url("poes.png");
     background-size: cover;
     // background: linear-gradient(to right, white, $pink);
     min-height: 100vh;
@@ -98,9 +98,12 @@ input[type="file"] {
 }
 
 .form-description {
-  margin: 75px auto;
+  margin-top: 75px;
+  margin-left: -50px;
   max-width: 260px;
   font-family: $abelfont;
+  background-color: $yellow;
+  padding: 20px;
 }
 
 .contact_email {

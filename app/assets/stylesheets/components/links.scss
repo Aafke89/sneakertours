@@ -1,0 +1,7 @@
+a.st-link{
+  color: $pink;
+  list-style: none;
+  &:hover {
+    font-style: italic;
+  }
+}
