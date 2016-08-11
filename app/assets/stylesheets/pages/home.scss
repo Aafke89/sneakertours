@@ -38,6 +38,7 @@
   position: absolute;
   padding: 0px 15px;
   font-size: 50px;
+  background-color: black;
 }
 
 .home-right-bottom {
@@ -107,6 +108,7 @@
     top: 260px;
     left: 240px;
     z-index: 1000;
+    font-weight: 900;
     a {
       color: black;
     }
@@ -123,23 +125,24 @@
   }
 }
 
-.wagentje {
+.ndsm {
   position: absolute;
-  top: 120px;
-  left: 20;
-  display: none;
+  bottom: -650px;
+  left: 20px;
   img {
-    height: 500px;
+    height: 650px;
   }
-  .get-the-map-cat-words {
-    font-size: 22px;
+  .get-the-map-ndsm-words {
+    display: none;
+    font-size: 20px;
     font-family: $headfont;
     padding: 10px 20px;
     background-color: $yellow;
     position: absolute;
     top: 260px;
-    left: 80px;
+    left: 44px;
     z-index: 1000;
+    font-weight: 900;
     a {
       color: black;
     }

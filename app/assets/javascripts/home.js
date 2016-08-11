@@ -53,8 +53,10 @@ setTimeout(function(){
   setTimeout(function() {$(".get-the-map-cat-left").fadeOut()}, 3400 )
   setTimeout(function() {$(".get-the-map-cat-right").fadeIn()}, 3500 )
   setTimeout(function() {$(".get-the-map-cat-right").fadeOut()}, 10000 )
-  setTimeout(function() {$(".wagentje").fadeIn()}, 12000 )
-}, 6000);
+  setTimeout(function() {$(".ndsm").animate({bottom:'-20px'}, 1400)}, 12000 )
+  setTimeout(function() {$(".get-the-map-ndsm-words").fadeIn()}, 13500 )
+  // setTimeout(function() {$(".wagentje").fadeIn()}, 12000 )
+}, 7000);
 
 
 
