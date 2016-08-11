@@ -1,9 +1,8 @@
 .wrapper-form {
     padding: 80px 40px;
     background-color: $yellow;
-    background-image: url("poes.png");
+    background-image: image-url("poes.png");
     background-size: cover;
-    // background: linear-gradient(to right, white, $pink);
     min-height: 100vh;
     display: flex;
 }
@@ -12,8 +11,8 @@
   margin: auto;
   max-width: 450px;
   background-color: $yellow;
-  border: 1px solid rgb(224, 222, 33);
-  // background-color: rgba(255, 238, 0, 0.21);
+  border: 1px solid rgb(0, 232, 133);
+  // border: 1px solid rgb(224, 222, 33);
   padding: 20px;
   font-family: $headfont;
 }
@@ -112,7 +111,7 @@ input[type="file"] {
 
 #contact_message {
     height: 200px;
-    padding: 0px;
+    padding: 5px;
     border: 0px;
     width: 400px;
     margin: 5px;

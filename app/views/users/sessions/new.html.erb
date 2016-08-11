@@ -1,6 +1,6 @@
 <div class="wrapper-form">
 <div class="form">
-<h2>Log in jajaja</h2>
+<h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -12,10 +12,11 @@
   <div class="form-actions">
     <%= f.button :submit, "Log in" %>
   </div>
-  <%= link_to "Sign up", new_user_registration_path  %>
+  <%#= link_to "Sign up", new_user_registration_path  %>
+  <%= render "users/shared/links" %>
 <% end %>
 
 </div>
 </div>
 
-<%= render "users/shared/links" %>
+

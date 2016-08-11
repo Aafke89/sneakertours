@@ -24,8 +24,8 @@ class Event < ActiveRecord::Base
 
   ## custom validations
   def validate_start_date
-    if start_date < Time.now
-        errors.add(:start_date, "Event should be in the future")
+    if end_date < Time.now
+        errors.add(:end_date, "Event should be in the future")
     end
   end
 
