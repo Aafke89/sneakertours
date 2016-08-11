@@ -11,6 +11,9 @@
   align-items: center;
   a {
     color: black;
+    &:hover {
+      color: $yellow !important;
+    }
   }
 }
 

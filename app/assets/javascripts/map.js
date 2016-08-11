@@ -19,16 +19,20 @@ var strictBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(52.402162, 4.978654)
     );
 
- // var eventsObject = {
- //        dragend: function(map) {
- //          lockBounds(map)
- //          console.log(map)
- //        },
- //        zoom_changed: function(map) {
- //          lockBounds(map)
- //        }
- //    }
+// // roodgroen
+  var stOverlay = new google.maps.GroundOverlay(
+      "http://res.cloudinary.com/aafke/image/upload/v1470917731/Sneakertours_map_groen_dj2gg9.jpg",
+      imageBounds);
 
+// geelrood
+ // var stOverlay = new google.maps.GroundOverlay(
+ //      "http://res.cloudinary.com/aafke/image/upload/v1470917735/Sneakertours_map_bgr_bv1pve.jpg",
+ //      imageBounds);
+
+ // rozegeel
+  // var stOverlay = new google.maps.GroundOverlay(
+    //   "http://res.cloudinary.com/aafke/image/upload/v1468501647/st-map-kleiner_jbouwu.jpg",
+    //   imageBounds);
 
     function lockBounds(map)
 {
