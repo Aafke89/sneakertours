@@ -153,9 +153,15 @@
 
 .home-couch {
   position: absolute;
-  bottom: 100px;
-  right: 10px;
+  // bottom: 100px;
+  // right: -10px;
   z-index: 300;
+  bottom: 81px;
+  transform: rotate(-13deg);
+  right: -50px;
+  img {
+    height: 200px;
+  }
   .couch-party {
     position: absolute;
     bottom: 160px;
@@ -164,6 +170,7 @@
 }
 
 // animate bike
+
 .home-locations {
   width: 100vw;
   position: absolute;
@@ -194,31 +201,6 @@
   -moz-animation: movebike-2 20s ease 3;
   -o-animation: movebike-2 20s ease 3;
 }
-
-
-// .home-bike-1 {
-//   position: absolute;
-//   bottom: 0px;
-//   left: 80px;
-//   z-index: 400;
-//   width: 600px;
-//   height: 200px;
-//   -webkit-animation: movebike-1 20s ease 1;
-//   -moz-animation: movebike-1 20s ease 1;
-//   -o-animation: movebike-1 20s ease 1;
-// }
-
-// .home-bike-2 {
-//   position: absolute;
-//   bottom: 0px;
-//   left: 80px;
-//   z-index: 400;
-//   width: 600px;
-//   height: 200px;
-//   -webkit-animation: movebike-2 20s ease 1;
-//   -moz-animation: movebike-2 20s ease 1;
-//   -o-animation: movebike-2 20s ease 1;
-// }
 
 @-webkit-keyframes movebike-1 {
   0% {margin-left: -300px;}
@@ -258,41 +240,73 @@
   32%, 34% {display: block; opacity: 1;}
 }
 
+@media screen and (max-width: 1000px) {
+  .home-couch,  .get-the-map-cat-right, .get-the-map-cat-left, .ndsm {
+    display: none;
+  }
+  .home-bike-1, .home-bike-2 {
+    height: 440px;
+    opacity: 0.4;
+  }
 
-// @-webkit-keyframes movebike-1 {
-//   0% {margin-left: -1000px;}
-//   32% {margin-left: 100px;}
-//   100% {margin-left: 2200px;}
-// }
-// @-moz-keyframes movebike-1 {
-//   0% {margin-left: -1000px;}
-//   32% {margin-left: 100px;}
-//   100% {margin-left: 1200px;}
-// }
-// @-o-keyframes movebike-1 {
-//   0% {margin-left: -1000px;}
-//   32% {margin-left: 100px;}
-//   100% {margin-left: 1200px;}
-// }
+  .get-the-map-cat-right, .get-the-map-cat-left {
+    bottom: 0px;
+    left: 10px;
+    opacity: 0.5;
+    .get-the-map-cat-words {
+      top: 460px;
 
-// @-webkit-keyframes movebike-2 {
-//   0% {display: block; margin-left: -1000px; opacity: 0;}
-//   32% {margin-left: 100px;}
-//   100% {display: block; margin-left: 1200px; opacity: 0;}
-//   31%, 33%, 35% {display: block; opacity: 0;}
-//   32%, 34% {display: block; opacity: 1;}
-// }
-// @-moz-keyframes movebike-2 {
-//   0% {display: block; margin-left: -1000px; opacity: 0;}
-//   32% {margin-left: 100px;}
-//   100% {display: block; margin-left: 1200px; opacity: 0;}
-//   31%, 33%, 35% {display: block; opacity: 0;}
-//   32%, 34% {display: block; opacity: 1;}
-// }
-// @-o-keyframes movebike-2 {
-//   0% {display: block; margin-left: -1000px; opacity: 0;}
-//   32% {margin-left: 100px;}
-//   100% {display: block; margin-left: 1200px; opacity: 0;}
-//   31%, 33%, 35% {display: block; opacity: 0;}
-//   32%, 34% {display: block; opacity: 1;}
-// }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .home-right-bottom {
+    .home-item {
+      bottom: -138px;
+      right: 160px;
+    }
+  }
+  .home-left-bottom {
+    .home-item {
+      bottom: -95px;
+      left: 170px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .home-logo {
+    top: 20px;
+    right: 0px;
+    img {
+     width: 90%;
+   }
+ }
+ .home-tagline {
+  font-size: 40px;
+}
+.home-right-bottom {
+  .home-item {
+    bottom: -100px;
+    right: 60px;
+  }
+}
+.home-left-bottom {
+  .home-item {
+    left: 60px;
+  }
+}
+}
+
+@media screen and (max-width: 420px) {
+  .home-tagline {
+    font-size: 30px;
+    margin-bottom: 120px;
+  }
+
+}
+
+
+
+
