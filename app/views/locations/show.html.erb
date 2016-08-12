@@ -15,7 +15,7 @@
         </div>
         <div class="location-link">
           <%= social_share_button_tag(@location.name, image: @location.picture) %>
-          <%= link_to "visit their website", @location.link  %>
+          <%= link_to "visit their website", @location.link, target: "_blank"   %>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <% end %>
       <% else %>
 
-      <p class="location-no-events">We didn't find any cool upcoming events at <%= @location.name %> for now. Check their <%= link_to "website", @location.link  %> for all their events.
+      <p class="location-no-events">We didn't find any cool upcoming events at <%= @location.name %> for now. Check their <%= link_to "website", @location.link, target: "_blank"   %> for all their events.
       </p>
       <% end %>
 
