@@ -7,16 +7,29 @@ var mapStyle =[
   }
 ]
 
+// // Bounds without border
+// var imageBounds = {
+//       north: 52.402162,
+//       south: 52.346415,
+//       east: 4.978654,
+//       west: 4.853680
+//     };
+
+// var strictBounds = new google.maps.LatLngBounds(
+//         new google.maps.LatLng(52.346415, 4.853680),
+//         new google.maps.LatLng(52.402162, 4.978654)
+//     );
+//
 var imageBounds = {
-      north: 52.402162,
-      south: 52.346415,
-      east: 4.978654,
-      west: 4.853680
+      north: 52.415062,
+      south: 52.333415,
+      east: 5.003654,
+      west: 4.827680
     };
 
 var strictBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(52.346415, 4.853680),
-        new google.maps.LatLng(52.402162, 4.978654)
+        new google.maps.LatLng(52.333415, 4.827680),
+        new google.maps.LatLng(52.415062, 5.003654)
     );
 
 // // roodgroen
@@ -26,7 +39,7 @@ var strictBounds = new google.maps.LatLngBounds(
 
 // geelrood
  var stOverlay = new google.maps.GroundOverlay(
-      "http://res.cloudinary.com/aafke/image/upload/v1470917735/Sneakertours_map_bgr_bv1pve.jpg",
+      "http://res.cloudinary.com/sneaker-tours/image/upload/v1475422706/sneakertours_map_red_yellow_withborder_zkjxn0.jpg",
       imageBounds);
 
  // // rozegeel

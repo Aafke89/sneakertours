@@ -38,6 +38,7 @@ gem 'puma'
 gem 'social-share-button'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'font-awesome-sass'
 
 gem 'rails_12factor', group: :production
 gem 'letter_opener', group: :development

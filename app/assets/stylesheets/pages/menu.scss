@@ -12,12 +12,12 @@
   a {
     color: black;
     &:hover {
-      color: $yellow !important;
+      color: $pink !important;
     }
   }
 }
 
-.menu-1-text {
+.menu-1-text, .menu-2-text, .menu-3-text {
   font-family: $headfont;
   font-size: 25px;
   padding: 20px;
@@ -26,26 +26,50 @@
   margin-left: 5px;
 }
 
-.menu-2-text {
-  font-family: $headfont;
-  font-size: 25px;
-  padding: 20px;
-  padding-bottom: 5px;
-  background-color: white;
-    margin-left: 5px;
+
+
+.menu-mobile {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  // vertical-align: center;
 }
-.menu-3-text {
+
+.menu-mobile-links {
   font-family: $headfont;
-  font-size: 25px;
-  padding: 20px;
-  padding-bottom: 5px;
+  font-size: 15px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   background-color: white;
-    margin-left: 5px;
+  a {
+    color: black;
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+.menu-mobile-cross {
+  font-family: $headfont;
+  font-size: 64px;
+  padding: 5px;
+  margin-top: -18px;
 }
 
 .menu-home {
   position: fixed;
-  top: 10px;
+  top: 0px;
   left: 10px;
   z-index: 100;
+}
+
+@media screen and (max-width: 550px) {
+  .menu-crosses {
+    display: none;
+}
+  .menu-cross-1, .menu-cross-2, .menu-cross-3, .menu-1, .menu-2, .menu-3 {
+    display: none;
+  }
 }

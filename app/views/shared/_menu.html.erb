@@ -1,8 +1,20 @@
+<div class="menu-mobile">
+  <div class="menu-mobile-cross">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <div class="menu-mobile-links hidden">
+    <%= link_to "X Where to go?", locations_path, class: "menu-mobile-1"  %> <br>
+    <%= link_to "X What's on?", events_path, class: "menu-mobile-2"  %> <br>
+    <%= link_to "X Get the map?", "/pages/get_the_map", class: "menu-mobile-3"  %>
+  </div>
+
+</div>
+
 <div class="menu-crosses">
     <div>
-    <div class="menu-1"> <%= link_to "X", locations_path, class: "menu-cross-1"  %><span class="hidden menu-1-text">Where to go?</span></div>
-    <div class="menu-2"> <%= link_to "X", events_path, class: "menu-cross-2"  %><span class="hidden menu-2-text">What's on?</span></div>
-    <div class="menu-3"> <%= link_to "X", "/pages/get_the_map", class: "menu-cross-3"  %><span class="hidden menu-3-text">Get the map</span></div>
+    <div class="menu-1"> <%= link_to "X", locations_path, class: "menu-cross-1"  %><span class="hidden menu-1-text"><%= link_to "Where to go?", locations_path  %></span></div>
+    <div class="menu-2"> <%= link_to "X", events_path, class: "menu-cross-2"  %><span class="hidden menu-2-text"><%= link_to "What's on?", events_path  %></span></div>
+    <div class="menu-3"> <%= link_to "X", "/pages/get_the_map", class: "menu-cross-3"  %><span class="hidden menu-3-text"><%= link_to "Get the map", "/pages/get_the_map" %></span></div>
   </div>
   </div>
 
