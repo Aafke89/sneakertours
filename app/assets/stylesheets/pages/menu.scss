@@ -32,7 +32,7 @@
   position: fixed;
   right: 0px;
   top: 0px;
-  display: flex;
+  display: none;
   // vertical-align: center;
 }
 
@@ -72,4 +72,9 @@
   .menu-cross-1, .menu-cross-2, .menu-cross-3, .menu-1, .menu-2, .menu-3 {
     display: none;
   }
+  .menu-mobile {
+  display: flex;
+  // vertical-align: center;
+}
+
 }
