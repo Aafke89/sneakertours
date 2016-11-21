@@ -5,7 +5,7 @@
     <%= link_to "show pending", admins_path(choice: "events", status: "pending"), class: "btn btn-admin-actions" %>
     <%= link_to "show accepted", admins_path(choice: "events", status: "accepted"), class: "btn btn-admin-actions" %>
     <%= link_to "show declined", admins_path(choice: "events", status: "declined"), class: "btn btn-admin-actions" %>
-    <%= link_to "show all", admins_path(choice: "events"), class: "btn btn-admin-actions" %>
+    <%= link_to "show all", admins_path(choice: "events", status: "all"), class: "btn btn-admin-actions" %>
     <!-- past/coming up --> <br><br>
     <%= link_to "Coming up", admins_path(choice: "events", status: @status, time: "coming"), class: "btn btn-admin-actions" %>
     <%= link_to "Past", admins_path(choice: "events", status: @status, time: "past"), class: "btn btn-admin-actions" %>

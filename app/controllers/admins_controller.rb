@@ -34,9 +34,11 @@ class AdminsController < ApplicationController
     elsif params[:status] == "accepted"
       @locations = Location.where(status: "accepted").order('updated_at ASC').paginate(page: params[:page], per_page: 10)
     elsif params[:status] == "declined"
-       @locations = Location.where(status: "declined").order('updated_at ASC').paginate(page: params[:page], per_page: 10)
+      @locations = Location.where(status: "declined").order('updated_at ASC').paginate(page: params[:page], per_page: 10)
+    elsif params[:status] == "all"
+      @locations = Location.all.order('updated_at ASC').paginate(page: params[:page], per_page: 10)
     else
-       @locations = Location.all.order('updated_at ASC').paginate(page: params[:page], per_page: 10)
+      @locations = Location.where(status: "pending").order('updated_at ASC').paginate(page: params[:page], per_page: 10)
     end
   end
 
@@ -55,9 +57,11 @@ class AdminsController < ApplicationController
     elsif @status == "accepted"
       @events = @filtered_events.where(status: "accepted").order(:start_date).paginate(page: params[:page], per_page: 10)
     elsif @status == "declined"
-       @events = @filtered_events.where(status: "declined").order(:start_date).paginate(page: params[:page], per_page: 10)
+      @events = @filtered_events.where(status: "declined").order(:start_date).paginate(page: params[:page], per_page: 10)
+    elsif @status == "all"
+      @events = @filtered_events.all.order(:start_date).paginate(page: params[:page], per_page: 10)
     else
-       @events = @filtered_events.all.order(:start_date).paginate(page: params[:page], per_page: 10)
+       @events = @filtered_events.where(status: "pending").order(:start_date).paginate(page: params[:page], per_page: 10)
     end
   end
 
