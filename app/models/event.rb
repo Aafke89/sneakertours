@@ -10,8 +10,8 @@ class Event < ActiveRecord::Base
 
 
   # validations
-  validates :title, presence: true, length: {minimum: 3, maximum: 30}
-  validates :description, presence: true, length: {minimum: 50}
+  validates :title, presence: true, length: {minimum: 3, maximum: 22}
+  validates :description, presence: true, length: {minimum: 30}
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :email, presence: true

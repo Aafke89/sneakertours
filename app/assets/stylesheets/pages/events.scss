@@ -18,8 +18,9 @@
 .events-title {
   font-family: $headfont;
   font-size: 40px;
-  text-align: right;
+  text-align: center;
   margin-left: 46px;
+
 }
 
 .events-content {
@@ -93,11 +94,11 @@
   font-size: 24px;
   background-color: $almost-white;
   font-family: $headfont;
+  padding-left: 10px;
   padding-right: 10px;
   height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .event-card-link {
