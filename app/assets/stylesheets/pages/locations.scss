@@ -9,12 +9,13 @@
 }
 
 .locations-list {
+  font-size: 18px;
   position: absolute;
   top: 130px;
   right: 20px;
-  padding: 20px 20px;
+  padding: 20px 10px;
   min-height: 440px;
-  width: 200px;
+  width: 223px;
   border-radius: 2px;
   text-align: left;
   background-color: white;
@@ -48,11 +49,22 @@
 
 .locations-buttons {
   position: absolute;
-  top: 80px;
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  margin-left: 80px;
+  top: 100px;
+  right: 20px;
+  width: 223px;
+  background-color: white;
+  a {
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+    color: black;
+    overflow: hidden;
+    &:hover {
+      color: $pink;
+      overflow: hidden;
+    }
+  }
 }
 
 .location-list-btn {

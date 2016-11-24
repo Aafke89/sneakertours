@@ -5,13 +5,27 @@
 <div class="wrapper-locations">
   <div id="locations-full-map"></div>
     <div class="locations-buttons">
-    <%= link_to "Art/Culture", locations_path(category: 'culture'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Bar", locations_path(category: 'bar'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Food", locations_path(category: 'food'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Party", locations_path(category: 'party'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Shop/Market", locations_path(category: 'shop'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "Chill/Outdoors", locations_path(category: 'chill'), class: "btn btn-loc-cat btn-space" %>
-    <%= link_to "All", locations_path(category: 'all'), class: "btn btn-loc-cat btn-space" %>
+    <%= link_to locations_path(category: 'culture'), title: 'Art/Culture' do %>
+        <i class="fa fa-paint-brush" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'bar', title: 'Bar') do %>
+        <i class="fa fa-beer" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'food', title: 'Food') do %>
+        <i class="fa fa-cutlery" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'party', title: 'Party') do %>
+        <i class="fa fa-music" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'shop', title: 'Shop/Market') do %>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'chill', title: 'Chill/Outdoors') do %>
+        <i class="fa fa-pagelines" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to locations_path(category: 'all', title: 'All') do %>
+        <i class="fa fa-close" aria-hidden="true"></i>
+    <% end %>
   </div>
   <div class="location-list-btn">
      <div class="btn btn-loc-list-show">Show list</div>
