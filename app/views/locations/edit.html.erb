@@ -18,6 +18,8 @@
 
    <div class="text-center">Category:</div>
     <%= f.input :category, collection: ["culture", "bar", "food", "party", "shop", "chill"], label: false %> <br><br>
+    <%= f.input :email, label: false%>
+
 
     <!-- Submit this event -->
     <%= f.button :submit, class: "btn-loc-cat text-center"  %>

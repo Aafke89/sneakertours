@@ -16,7 +16,9 @@ class Event < ActiveRecord::Base
   validates :end_date, presence: true
   validates :email, presence: true
   validates_format_of :link, with: /\A#{URI::regexp}\z/, :message => "Please fill in a correct adress including http:// of https://"
-  validates_format_of :image, with: /\A#{URI::regexp}\z/, :message => "Please fill in a correct adress including http:// of https://"
+  validates_format_of :image, with: /\A#{URI::regexp}\z/,
+    :message => "Please upload a correct image",
+    :allow_blank => true
   validates_format_of :email, with: /@/
 
   validate :validate_start_date
@@ -38,14 +40,11 @@ class Event < ActiveRecord::Base
   # instance methods
 
   def always_image
-    # Add some random pictures as default picture
-    default_images = ["http://www.sneakertours.nl/illustrations/landingspage22.jpg",
-      "http://www.sneakertours.nl/illustrations/provowittefiets.jpg",
-      "http://www.sneakertours.nl/illustrations/st-map-blauw.jpg"]
-    if self.image != nil && self.image != ""
-      self.image
+    # Show the image of the location if no event-image is set.
+    if self.image.blank?
+      return self.location.picture
     else
-      default_images.sample
+      return self.image
     end
   end
 

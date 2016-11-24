@@ -14,3 +14,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore this stupid .idea file
+.idea/workspace.xml
+.idea/tasks.xml

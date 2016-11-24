@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="location-card-image">
-          <%= cl_image_tag event.image %>
+          <%= cl_image_tag event.always_image %>
         </div>
         <%= link_to "", event_path(event), class: "location-event-card-link"   %>
       </div>
@@ -83,7 +83,7 @@
     var myLatLng = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %> }
 
     var map = new google.maps.Map(document.getElementById('location-map'), {
-      zoom: 12,
+      zoom: 14,
       minZoom: 12,
       center: myLatLng,
       draggable: true,
