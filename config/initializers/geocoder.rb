@@ -1,7 +1,7 @@
 Geocoder.configure(
   # Geocoding options
   timeout: 3,                 # geocoding service timeout (secs)
-  lookup: :test,            # name of geocoding service (symbol)
+  # lookup: :test,            # name of geocoding service (symbol)
   # language: :en,              # ISO-639 language code
   use_https: true,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
