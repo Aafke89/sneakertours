@@ -125,7 +125,7 @@ GEM
       actionmailer (>= 3.0.0)
       postmark (~> 1.8.0)
     puma (3.4.0)
-    rack (1.6.4)
+    rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.6)
